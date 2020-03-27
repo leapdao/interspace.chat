@@ -3,12 +3,20 @@ import React, { useRef, useEffect } from "react";
 
 const JitsiMeetExternalAPI = window.JitsiMeetExternalAPI;
 
-const JitsiInstance = ({ roomData }) => {
+const NewRoomJitsiInstance = ({ roomData }) => {
   const root = useRef(null);
+  const roomObject = {
+    "new room": {
+      jitsi: {
+        domain: "portal.interspace.chat",
+        roomName: { roomData }
+      }
+    }
+  };
 
   useEffect(() => {
     const options = {
-      roomName: roomData.roomName,
+      roomName: roomData,
       width: "100%",
       height: "100%",
       parentNode: root.current,
@@ -45,7 +53,7 @@ const JitsiInstance = ({ roomData }) => {
         ]
       }
     };
-    const api = new JitsiMeetExternalAPI(roomData.domain, options);
+    const api = new JitsiMeetExternalAPI("portal.interspace.chat", options);
 
     // api.executeCommand("displayName", user);
 
@@ -57,4 +65,4 @@ const JitsiInstance = ({ roomData }) => {
   return <div ref={root} style={{ height: "100%" }}></div>;
 };
 
-export default JitsiInstance;
+export default NewRoomJitsiInstance;

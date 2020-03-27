@@ -8,7 +8,8 @@ import LoftRadioInstance from "./integrations/LoftRadioInstance";
 import ChatInstance from "./integrations/ChatInstance";
 import CalendarInstance from "./integrations/CalendarInstance";
 import JitsiInstance from "./integrations/JitsiInstance";
-import RoomInstance from "./RoomInstance";
+import RoomInstance from "./integrations/RoomInstance";
+import LaunchNewRoom from "./LaunchNewRoom";
 import { RoomNames } from "../utils/constants";
 
 const width = window.innerWidth / 2;
@@ -33,6 +34,7 @@ const SpaceContainer = styled.div`
 const SpaceContent = styled.div`
   width: 100%;
   flex: 1;
+  cursor: initial;
 `;
 
 const spaceContainerStyle = {
@@ -65,35 +67,6 @@ const Closer = styled.div`
   }
 `;
 
-const ChatStyle = styled.span`
-  padding: 1rem;
-
-  .Collapsible__trigger {
-    color: black;
-    background-color: whitesmoke;
-    cursor: pointer;
-    padding: 0.2rem;
-    :hover {
-      background-color: #00ffbf;
-    }
-  }
-  .Collapsible__contentOuter {
-    :hover {
-      .Collapsible__contentInner {
-      }
-    }
-  }
-  .Collapsible__contentInner {
-    padding: 0.5rem;
-
-    a {
-      color: #00ffbf;
-    }
-  }
-`;
-
-const RoomWithChat = styled.div``;
-
 function getFloatingRoomWindow(windowKey) {
   if (windowKey === "loft.radio") {
     return <LoftRadioInstance />;
@@ -103,6 +76,8 @@ function getFloatingRoomWindow(windowKey) {
     return <ChatInstance />;
   } else if (windowKey === "calendar") {
     return <CalendarInstance />;
+  } else if (windowKey === "launch") {
+    return <LaunchNewRoom />;
   } else if (windowKey === null) {
     return null;
   }
@@ -167,6 +142,7 @@ function FloatingRoomWindow() {
         width: width - 20,
         height
       }}
+      cancel={".nodrag"}
       style={{
         ...spaceContainerStyle,
         zIndex: zIndexes[windowKey] || 1
@@ -181,7 +157,9 @@ function FloatingRoomWindow() {
           <SpaceHeaderElement>{windowKey}</SpaceHeaderElement>
           <SpaceHeaderElement></SpaceHeaderElement>
         </SpaceHeader>
-        <SpaceContent>{getFloatingRoomWindow(windowKey)}</SpaceContent>
+        <SpaceContent className="nodrag">
+          {getFloatingRoomWindow(windowKey)}
+        </SpaceContent>
       </SpaceContainer>
     </Rnd>
   ));

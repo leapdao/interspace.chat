@@ -25,10 +25,19 @@ const FloatingSpaceContextProvider = props => {
   function closeFloatingSpace(windowKey) {
     setFloatingSpaces(currentFloatingSpaces.filter(s => s !== windowKey));
   }
+  function replaceFloatingSpace(windowKey) {
+    Object.keys(RoomNames).push(windowKey);
+    setFloatingSpaces(currentFloatingSpaces.splice(1, 1, windowKey));
+  }
 
   return (
     <FloatingSpaceContext.Provider
-      value={{ currentFloatingSpaces, addFloatingSpace, closeFloatingSpace }}
+      value={{
+        currentFloatingSpaces,
+        addFloatingSpace,
+        closeFloatingSpace,
+        replaceFloatingSpace
+      }}
     >
       {props.children}
     </FloatingSpaceContext.Provider>

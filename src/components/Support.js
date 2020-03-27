@@ -3,9 +3,6 @@ import styled from "styled-components";
 import Collapsible from "react-collapsible";
 
 import SupporterParallele from "../img/support-parallele.png";
-import SupporterEcosystem from "../img/support-ecosystem.png";
-import SupporterEthglobal from "../img/support-ethglobal.png";
-import SupporterGitcoin from "../img/support-gitcoin.png";
 
 const SupportStyled = styled.nav`
   text-align: left;
@@ -67,7 +64,7 @@ const Support = () => {
         <p>Supported by:</p>
         <ul>
           <StyledListItem>
-            <StyledLink href="https://parallele.at">
+            <StyledLink href="https://parallele.at" target="blank">
               <img
                 src={SupporterParallele}
                 alt="Supported by Parallele Polis Vienna"

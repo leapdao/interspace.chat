@@ -1,11 +1,11 @@
 import React, { useState, useContext } from "react";
 import styled from "styled-components";
 
-import { FloatingSpaceContext } from "../contexts/FloatingSpaceContext";
+import { FloatingSpaceContext } from "../../contexts/FloatingSpaceContext";
 
-import { RoomURLs } from "../utils/constants";
-import JitsiInstance from "./integrations/JitsiInstance";
-import ChatInstance from "./integrations/ChatInstance";
+import { RoomURLs } from "../../utils/constants";
+import JitsiInstance from "./JitsiInstance";
+import ChatInstance from "./ChatInstance";
 // import YoutubeInstance from './integrations/YoutubeInstance';
 // import HubInstance from './integrations/HubInstance';
 
@@ -37,15 +37,15 @@ const ChatButton = styled.button`
 `;
 
 const RoomInstance = ({ space }) => {
-  const { addFloatingSpace } = useContext(FloatingSpaceContext);
+  const { currentFloatingSpaces, addFloatingSpace } = useContext(
+    FloatingSpaceContext
+  );
   const roomURLs = RoomURLs[space];
   const availableServiceNames = Object.keys(SERVICES).filter(serviceName =>
     Object.keys(roomURLs).includes(serviceName)
   );
 
-  const [selectedServiceName, selectServiceName] = useState(
-    availableServiceNames[0]
-  );
+  const [selectedServiceName] = useState(availableServiceNames[0]);
 
   if (availableServiceNames.length === 0) return <div>Unknown room</div>;
 
@@ -53,22 +53,14 @@ const RoomInstance = ({ space }) => {
   const selectedService = SERVICES[selectedServiceName];
   const RoomServiceComponent = selectedService.component;
 
-  function onServiceClick(name) {
-    const service = SERVICES[name];
-    if (service.external) {
-      const roomData = roomURLs[name];
-      window.open(roomData.externalUrl);
-    } else {
-      selectServiceName(name);
-    }
-  }
-
   return (
     <Container>
       <RoomServiceComponent roomData={roomData} />
-      <ChatButton onClick={() => addFloatingSpace("discord chat")}>
-        Open Chat
-      </ChatButton>
+      {currentFloatingSpaces.indexOf("discord chat") === -1 ? (
+        <ChatButton onClick={() => addFloatingSpace("discord chat")}>
+          Open Chat
+        </ChatButton>
+      ) : null}
     </Container>
   );
 };
