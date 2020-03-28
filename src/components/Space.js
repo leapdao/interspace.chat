@@ -5,11 +5,13 @@ import { BrowserView, MobileView } from "react-device-detect";
 
 import { FloatingSpaceContext } from "../contexts/FloatingSpaceContext";
 
+import colors from "../utils/colors";
+
 import Room from "./Room";
 import JitsiInstanceMobile from "./integrations/JistiInstanceMobile";
 
 const Headline = styled.h6`
-  color: whitesmoke;
+  color: black;
   font-weight: 600;
   font-size: 1.3rem;
   padding: 1rem;
@@ -17,7 +19,7 @@ const Headline = styled.h6`
   a {
     font-weight: 100;
     color: black;
-    background-color: #00ffbf;
+    background-color: ${colors.highlight};
     text-decoration: underline;
   }
 
@@ -44,7 +46,7 @@ const SpaceInfo = styled.div`
   font-size: 1rem;
   z-index: 100;
   div {
-    color: violet;
+    color: red;
   }
 `;
 
@@ -194,44 +196,32 @@ const Space = () => {
             <div
               id="c0"
               className="circle row-1 c-center c-1 click-zone"
-              onClick={() => openInNewTab("https://portal.interspace.chat")}
+              onClick={() => addFloatingSpace("parallel-society")}
             >
-              <span className="roomName">Launch new capsule</span>
+              <span className="roomName">Parallel Society</span>
             </div>
             <div
               id="c1"
               className="circle row-2 c-right click-zone"
-              onClick={() => addFloatingSpace("capsule2")}
+              onClick={() => addFloatingSpace("metatrack")}
             >
-              <span className="roomName">Capsule 2</span>
+              <span className="roomName">Metatrack</span>
             </div>
-            <div
-              id="c2"
-              className="circle row-6 c-right click-zone"
-              onClick={() => openInNewTab("https://ethturin.com/")}
-            >
-              <span className="roomName">ETHTurin</span>
-            </div>
+            <div id="c2" className="circle row-6 c-right click-zone"></div>
             <div
               id="c3"
               className="circle row-7 c-center click-zone"
-              onClick={() => openInNewTab("https://interspace.noncon.org")}
+              onClick={() => openInNewTab("https://portal.interspace.chat")}
             >
-              <span className="roomName">NonCon</span>
+              <span className="roomName">Open New Room</span>
             </div>
-            <div
-              id="c4"
-              className="circle row-6 c-left click-zone"
-              onClick={() => openInNewTab("https://interspace.metagame.wtf")}
-            >
-              <span className="roomName">Metagame</span>
-            </div>
+            <div id="c4" className="circle row-6 c-left click-zone"></div>
             <div
               id="c5"
               className="circle row-2 c-left click-zone"
-              onClick={() => addFloatingSpace("capsule1")}
+              onClick={() => addFloatingSpace("cryptoeconomics-lab")}
             >
-              <span className="roomName">Capsule 1</span>
+              <span className="roomName">Cryptoeconomics Lab</span>
             </div>
 
             <div
@@ -239,7 +229,7 @@ const Space = () => {
               className="circle row-2 c-center click-zone"
               onClick={() => addFloatingSpace("discord chat")}
             >
-              <span className="roomName">Discord chat</span>
+              <span className="roomName">Discord Chat</span>
             </div>
 
             <div id="c7" className="circle row-3 c-center-right"></div>

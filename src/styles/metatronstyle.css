@@ -43,18 +43,18 @@ body {
     grid-row-end: 40; }
     .m-grid-container .frame .path-hex {
       stroke-width: 0.08;
-      stroke: rgba(255, 255, 255, 0.1);
+      stroke: rgba(255, 0, 0, 0.041);
       fill: none; }
     .m-grid-container .frame .animated {
       stroke-width: 0.1;
-      stroke: rgba(255, 255, 255, 0.4);
+      stroke: rgba(255, 0, 0, 0.4);
       fill: none;
       stroke-dasharray: 210;
       -webkit-animation: 4s dash ease-in forwards;
       animation: 4s dash ease-in forwards; }
     .m-grid-container .frame .path-circle {
       stroke-width: 0.05;
-      stroke: rgba(255, 255, 255, 0.7);
+      stroke: rgba(255, 0, 0, 0.295);
       fill: none;
       stroke-dasharray: 210;
       -webkit-animation: 5s dash2 ease-in;
@@ -100,9 +100,9 @@ body {
   100% {
     opacity: 0; } }
   .m-grid-container .circle {
-    background: -webkit-radial-gradient(50% 50%, 40% 40%, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-    background: -o-radial-gradient(50% 50%, 40% 40%, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
-    background: radial-gradient(40% 40% at 50% 50%, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: -webkit-radial-gradient(50% 50%, 40% 40%, rgba(255, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: -o-radial-gradient(50% 50%, 40% 40%, rgba(255, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+    background: radial-gradient(40% 40% at 50% 50%, rgba(255, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
     border-radius: 100%;
     display: block;
     -webkit-transition: 3s ease-in;

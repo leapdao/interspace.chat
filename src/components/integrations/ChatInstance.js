@@ -2,17 +2,19 @@ import React, { useState, useEffect, useContext } from "react";
 import { FloatingSpaceContext } from "../../contexts/FloatingSpaceContext";
 
 function ChatInstance() {
-  const [discordRoom, setDiscordRoom] = useState("690315812002988361");
+  const [discordRoom, setDiscordRoom] = useState("692409996083855501");
   const { currentFloatingSpaces } = useContext(FloatingSpaceContext);
   const space = currentFloatingSpaces;
 
   useEffect(() => {
-    if (space.indexOf("capsule1") > -1) {
-      setDiscordRoom("692864138447421530");
-    } else if (space.indexOf("capsule2") > -1) {
-      setDiscordRoom("692864277714829392");
+    if (space.indexOf("parallel-society") > -1) {
+      setDiscordRoom("692423172020240444");
+    } else if (space.indexOf("cryptoeconomics-lab") > -1) {
+      setDiscordRoom("692423341046366208");
+    } else if (space.indexOf("metatrack") > -1) {
+      setDiscordRoom("692423431777681488");
     } else {
-      setDiscordRoom("690315812002988361");
+      setDiscordRoom("692409996083855501");
     }
     return console.log(discordRoom);
   }, [space, discordRoom]);

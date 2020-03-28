@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Collapsible from "react-collapsible";
 
+import colors from "../utils/colors";
+
 import SupporterParallele from "../img/support-parallele.png";
 
 const SupportStyled = styled.nav`
@@ -13,7 +15,7 @@ const SupportStyled = styled.nav`
     cursor: pointer;
     padding: 0.2rem;
     :hover {
-      background-color: #00ffbf;
+      background-color: ${colors.highlight};
     }
   }
   .Collapsible__contentOuter {
@@ -33,7 +35,7 @@ const SupportStyled = styled.nav`
     }
 
     a {
-      color: #00ffbf;
+      color: ${colors.highlight};
     }
   }
 `;

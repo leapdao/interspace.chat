@@ -1,11 +1,11 @@
 import React, { useState, useContext } from "react";
 import styled from "styled-components";
 
-import { FloatingSpaceContext } from "../contexts/FloatingSpaceContext";
+import { FloatingSpaceContext } from "../../contexts/FloatingSpaceContext";
 
-import { RoomURLs } from "../utils/constants";
-import JitsiInstance from "./integrations/JitsiInstance";
-import ChatInstance from "./integrations/ChatInstance";
+import { RoomURLs } from "../../utils/constants";
+import JitsiInstance from "../integrations/JitsiInstance";
+import ChatInstance from "../integrations/ChatInstance";
 // import YoutubeInstance from './integrations/YoutubeInstance';
 // import HubInstance from './integrations/HubInstance';
 
@@ -26,6 +26,12 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: row;
 `;
 
 const ChatButton = styled.button`
@@ -56,11 +62,18 @@ const RoomInstance = ({ space }) => {
   return (
     <Container>
       <RoomServiceComponent roomData={roomData} />
-      {currentFloatingSpaces.indexOf("discord chat") === -1 ? (
-        <ChatButton onClick={() => addFloatingSpace("discord chat")}>
-          Open Chat
-        </ChatButton>
-      ) : null}
+      <ButtonContainer>
+        {currentFloatingSpaces.indexOf("youtube") === -1 ? (
+          <ChatButton onClick={() => addFloatingSpace("youtube")}>
+            Livestream
+          </ChatButton>
+        ) : null}
+        {currentFloatingSpaces.indexOf("discord chat") === -1 ? (
+          <ChatButton onClick={() => addFloatingSpace("discord chat")}>
+            Open Chat
+          </ChatButton>
+        ) : null}
+      </ButtonContainer>
     </Container>
   );
 };

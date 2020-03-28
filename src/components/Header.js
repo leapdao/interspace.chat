@@ -37,7 +37,7 @@ const Header = () => {
   return (
     <HeaderContainer>
       <Logolink href="/">
-        <Logotext>interspace.chat</Logotext>
+        <Logotext>noncon.interspace.chat</Logotext>
       </Logolink>
       <Help />
       <Support />

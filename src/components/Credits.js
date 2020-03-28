@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Collapsible from "react-collapsible";
 
+import colors from "../utils/colors";
+
 import Titanembeds from "../img/titanembeds.png";
 import Jitsilogo from "../img/jitsi.png";
 
@@ -16,7 +18,7 @@ const CreditsStyled = styled.nav`
     cursor: pointer;
     padding: 0.2rem;
     :hover {
-      background-color: #00ffbf;
+      background-color: ${colors.highlight};
     }
   }
   .Collapsible__contentOuter {
@@ -31,7 +33,7 @@ const CreditsStyled = styled.nav`
     padding: 0.5rem;
 
     a {
-      color: #00ffbf;
+      color: ${colors.highlight};
     }
   }
 `;
@@ -64,16 +66,6 @@ const Credits = () => {
               rel="noopener noreferrer"
             >
               @MGrudule
-            </a>{" "}
-          </StyledListItem>
-          <StyledListItem>
-            "Space Image" by{" "}
-            <a
-              href="https://www.pexels.com/photo/cluster-of-stars-1341279/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Kai Pilger from Pexels
             </a>{" "}
           </StyledListItem>
         </ul>
@@ -130,7 +122,7 @@ const Credits = () => {
             </a>
           </StyledListItem>
           <StyledListItem>
-            Donate to our{" "}
+            Donate to our interspace.chat{" "}
             <a
               href="https://gitcoin.co/grants/516/interspacechat"
               target="_blank"
@@ -142,11 +134,11 @@ const Credits = () => {
           <StyledListItem>
             or directly to{" "}
             <a
-              href="https://etherscan.io/address/support.interspacechat.eth"
+              href="https://etherscan.io/address/noncon.eth"
               target="_blank"
               rel="noopener noreferrer"
             >
-              support.interspacechat.eth
+              noncon.eth
             </a>{" "}
           </StyledListItem>
           <StyledListItem>

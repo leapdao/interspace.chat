@@ -1,25 +1,26 @@
 @font-face {
   font-family: 'Comfortaa';
   font-style: normal;
-  font-weight: 300;
+  font-weight: 300, 400;
+  src: url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap');
 }
 
 
 * {
-  font-family: "Comfortaa","RobotoMono", Courier, monospace;
+  font-family: "Comfortaa", sans-serif;
   font-weight: 300;
   font-size: 14px;
-  color: whitesmoke;
+  color: black;
 }
 
 html {
   height: 100%;
-  background-color: rgb(36, 36, 36);
-  background-image: url(./img/spacebackground3.jpg);
+  background-color: rgb(255, 255, 255);
+  /** background-image: url(./img/spacebackground3.jpg); **/
   background-size: cover;
-  background-repeat: repeat;
+  /** background-repeat: repeat; **/
   background-blend-mode: soft-light;
-  box-shadow: inset 0px 0px 30px 30px rgba(0,0,0,0.1);
+  box-shadow: inset 0px 0px 100px 100px rgba(29, 0, 0, 0.1);
   margin: 0px;
   padding: 0px;
 }
@@ -152,41 +153,62 @@ body {
   /* border: 1px solid grey; */
 }
 
+#c0 {
+  background-position: center;
+}
+
 #c0:hover {
-  background: url(./img/c12.png);
-  background-size: cover;
+  background-color: rgb(0,0,0);
+  background-image: url(./img/parallele.png);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#c1 {
+  background-position: center;
 }
 
 #c1:hover {  
-  background: url(./img/c10.jpg);
-  background-size: cover;
+  background-color: whitesmoke;
+  background: url(./img/metacartel.png);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #c2:hover {
   filter: saturate(0);
-  background: url(./img/ethturin.png);
-  background-size: cover;
-}
-
-#c3:hover {
-  background: url(./img/noncon.png);
-  background-size: cover;
-}
-
-#c4:hover {
-  background: url(./img/metagame.png);
-  background-size: cover;
-}
-
-#c5:hover {
-  background: url(./img/c8.jpg);
   
   background-size: cover;
 }
 
-#c6:hover{
-  background: url(./img/c7.jpg);
+#c3:hover {
+  background: url(./img/vortex.png);
   background-size: cover;
+}
+
+#c4:hover {
+  
+  background-size: cover;
+}
+
+#c5:hover {
+  background: url(./img/ethereum.png);
+  background-color: rgb(255, 251, 0);
+  background-size: cover;
+}
+
+#c6 {
+  background-position: center;
+}
+
+#c6:hover{
+  
+  background: url(./img/discord.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 
@@ -202,7 +224,7 @@ body {
 
 
 #c9:hover{
-  background: url(./img/c9.jpg);
+  background: url(./img/loftradio.png);
   background-size: cover;
 }
 
@@ -217,9 +239,15 @@ body {
   background-size: cover;
 }
 
+#c12 {
+  background-position: center;
+}
+
 #c12:hover {
-  background: url(./img/c6.jpg);
-  background-size: cover;
+  background: url(./img/sun.jpg);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .click-zone:hover .click-zone-highlight {

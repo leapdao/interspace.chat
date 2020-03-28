@@ -2,6 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Collapsible from "react-collapsible";
 
+import colors from "../utils/colors";
+
 const HelpStyled = styled.nav`
   text-align: left;
 
@@ -11,7 +13,7 @@ const HelpStyled = styled.nav`
     cursor: pointer;
     padding: 0.2rem;
     :hover {
-      background-color: #00ffbf;
+      background-color: ${colors.highlight};
     }
   }
   .Collapsible__contentOuter {
@@ -26,7 +28,7 @@ const HelpStyled = styled.nav`
     padding: 0.5rem;
 
     a {
-      color: #00ffbf;
+      color: ${colors.highlight};
     }
   }
 `;

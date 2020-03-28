@@ -1,19 +1,19 @@
-import React from 'react';
+import React from "react";
 
-import UserContextProvider from './UserContext';
-import FloatingSpaceContextProvider from './FloatingSpaceContext';
-import HouseContextProvider from './HouseContext';
+import UserContextProvider from "./UserContext";
+import FloatingSpaceContextProvider from "./FloatingSpaceContext";
+import HouseContextProvider from "./HouseContext";
 
 const RootContextProvider = props => {
-	return (
-		<UserContextProvider>
-			<HouseContextProvider>
-				<FloatingSpaceContextProvider>
-					{props.children}
-				</FloatingSpaceContextProvider>
-			</HouseContextProvider>
-		</UserContextProvider>
-	);
+  return (
+    <UserContextProvider>
+      <HouseContextProvider>
+        <FloatingSpaceContextProvider>
+          {props.children}
+        </FloatingSpaceContextProvider>
+      </HouseContextProvider>
+    </UserContextProvider>
+  );
 };
 
 export default RootContextProvider;

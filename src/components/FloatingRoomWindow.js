@@ -4,9 +4,10 @@ import { Rnd } from "react-rnd";
 
 import { FloatingSpaceContext } from "../contexts/FloatingSpaceContext";
 import LoftRadioInstance from "./integrations/LoftRadioInstance";
+import YoutubeInstance from "./integrations/YoutubeInstance";
 import ChatInstance from "./integrations/ChatInstance";
 import CalendarInstance from "./integrations/CalendarInstance";
-import RoomInstance from "./RoomInstance";
+import RoomInstance from "./integrations/RoomInstance";
 import { RoomNames } from "../utils/constants";
 
 const width = window.innerWidth / 2;
@@ -72,6 +73,10 @@ function getFloatingRoomWindow(windowKey) {
     return <ChatInstance />;
   } else if (windowKey === "calendar") {
     return <CalendarInstance />;
+  } else if (windowKey === "youtube") {
+    return <YoutubeInstance />;
+  } else if (windowKey === "hub") {
+    return <ChatInstance />;
   } else if (windowKey === null) {
     return null;
   }
@@ -114,6 +119,8 @@ function FloatingRoomWindow() {
       windowOriginX = width;
     } else if (windowKey === "calendar") {
       windowOriginX = width;
+    } else if (windowKey === "youtube") {
+      windowOriginX = 20;
     }
     return windowOriginX;
   };
@@ -122,7 +129,9 @@ function FloatingRoomWindow() {
     if (windowKey === "discord chat") {
       windowOriginY = 40;
     } else if (windowKey === "calendar") {
-      windowOriginY = height / 2;
+      windowOriginY = height + 10;
+    } else if (windowKey === "youtube") {
+      windowOriginY = height + 10;
     }
     return windowOriginY;
   };
@@ -134,7 +143,7 @@ function FloatingRoomWindow() {
         x: setStartingCoordinatesX(windowKey),
         y: setStartingCoordinatesY(windowKey),
         width: width - 20,
-        height
+        height: height - 20
       }}
       style={{
         ...spaceContainerStyle,
