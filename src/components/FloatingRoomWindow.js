@@ -10,8 +10,10 @@ import CalendarInstance from "./integrations/CalendarInstance";
 import RoomInstance from "./integrations/RoomInstance";
 import { RoomNames } from "../utils/constants";
 
-const width = window.innerWidth - 200;
-const height = window.innerHeight - 200;
+import AboutInstance from "./external-sites/AboutInstance"
+
+const width = window.innerWidth / 2;
+const height = window.innerHeight / 2;
 
 const SpaceHeader = styled.div`
   display: flex;
@@ -83,6 +85,8 @@ function getFloatingRoomWindow(windowKey) {
     return <YoutubeInstance />;
   } else if (windowKey === "hub") {
     return <ChatInstance />;
+  } else if (windowKey === "about") {
+    return <AboutInstance />;
   } else if (windowKey === null) {
     return null;
   }
@@ -146,8 +150,8 @@ function FloatingRoomWindow() {
     <Rnd
       key={windowKey}
       default={{
-        x: 100, // setStartingCoordinatesX(windowKey),
-        y: 40, // setStartingCoordinatesY(windowKey),
+        x: setStartingCoordinatesX(windowKey),
+        y: setStartingCoordinatesY(windowKey),
         width: width - 20,
         height: height - 20
       }}
