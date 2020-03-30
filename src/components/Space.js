@@ -1,292 +1,307 @@
-import React, { Fragment, useContext } from "react";
-import styled from "styled-components";
+import React, { Fragment, useContext } from 'react';
+import styled from 'styled-components';
 
-import { BrowserView, MobileView } from "react-device-detect";
+import { BrowserView, MobileView } from 'react-device-detect';
 
-import { FloatingSpaceContext } from "../contexts/FloatingSpaceContext";
+import { FloatingSpaceContext } from '../contexts/FloatingSpaceContext';
 
-import colors from "../utils/colors";
+import colors from '../utils/colors';
 
-import Room from "./Room";
-import JitsiInstanceMobile from "./integrations/JistiInstanceMobile";
+import Room from './Room';
+import JitsiInstanceMobile from './integrations/JistiInstanceMobile';
 
 const Headline = styled.h6`
-  color: black;
-  font-weight: 600;
-  font-size: 1.3rem;
-  padding: 1rem;
+	color: black;
+	font-weight: 600;
+	font-size: 1.3rem;
+	padding: 1rem;
 
-  a {
-    font-weight: 100;
-    color: black;
-    background-color: ${colors.highlight};
-    text-decoration: underline;
-  }
+	a {
+		font-weight: 100;
+		color: black;
+		background-color: ${colors.highlight};
+		text-decoration: underline;
+	}
 
-  @media (max-width: 600px) {
-    background-color: black;
-  }
+	@media (max-width: 600px) {
+		background-color: whitesmoke;
+	}
 `;
 
 const SpaceSelector = styled.nav`
-  padding-bottom: 1rem;
-  width: 100%;
+	padding-bottom: 1rem;
+	width: 100%;
 
-  @media (max-width: 600px) {
-    background-color: black;
-    padding: 0px;
-    min-height: 10vh;
-  }
+	@media (max-width: 600px) {
+		padding: 0px;
+		min-height: 10vh;
+	}
 `;
 
 const SpaceInfo = styled.div`
-  text-align: center;
-  padding-top: 1rem;
-  margin: 0 auto;
-  font-size: 1rem;
-  z-index: 100;
-  div {
-    color: red;
-  }
+	text-align: center;
+	padding-top: 1rem;
+	margin: 0 auto;
+	font-size: 1rem;
+	z-index: 100;
+	div {
+		color: red;
+	}
 `;
 
 const Descripton = styled.div`
-  position: absolute;
-  top: 0px;
-  width: 100%;
-  background-color: black;
-  z-index: 1;
-  margin: 0px;
-  font-size: 0.8rem;
-  padding-bottom: 0.4rem;
-  p {
-    padding: 0.5rem;
-    margin: 0px;
-  }
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	background-color: black;
+	z-index: 1;
+	margin: 0px;
+	font-size: 0.8rem;
+	padding-bottom: 0.4rem;
+	p {
+		padding: 0.5rem;
+		margin: 0px;
+	}
 
-  a {
-    padding: 0px;
-  }
+	a {
+		padding: 0px;
+	}
+	@media (max-width: 600px) {
+		position: relative;
+		background-color: whitesmoke;
+		max-width: 80vw;
+		margin: 0 auto;
+	}
 `;
 
 const CurrentSpace = styled.span`
-  color: whitesmoke;
+	color: #ff0000;
 `;
 
 const MobileContainer = styled.div`
-  background: black;
-  justify-content: center;
+	background: whitesmoke;
+	justify-content: center;
 `;
 
 const MobileSelectorContainer = styled.div`
-  background: black;
-  box-shadow: inset 0px 0px 30px 30px rgba(0, 0, 0, 0);
-  justify-content: center;
-  display: grid;
-  grid-template-columns: auto auto auto;
-  grid-gap: 0.2rem;
+	background: whitesmoke;
+	box-shadow: inset 0px 0px 30px 30px rgba(0, 0, 0, 0);
+	justify-content: center;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-gap: 0.2rem;
+`;
+
+const StrongStyled = styled.strong`
+	font-weight: 700;
 `;
 
 const Space = () => {
-  const { currentFloatingSpaces, addFloatingSpace } = useContext(
-    FloatingSpaceContext
-  );
+	const { currentFloatingSpaces, addFloatingSpace } = useContext(
+		FloatingSpaceContext
+	);
 
-  let displayedJoinedSpaces;
-  if (currentFloatingSpaces.length > 0) {
-    if (currentFloatingSpaces.length > 2) {
-      let nameCount = currentFloatingSpaces.length;
-      displayedJoinedSpaces =
-        currentFloatingSpaces.slice(0, nameCount - 2).join(", ") +
-        ", " +
-        currentFloatingSpaces.slice(nameCount - 2, nameCount).join(" & ");
-    } else {
-      displayedJoinedSpaces = currentFloatingSpaces.join(" & ");
-    }
-  }
+	let displayedJoinedSpaces;
+	if (currentFloatingSpaces.length > 0) {
+		if (currentFloatingSpaces.length > 2) {
+			let nameCount = currentFloatingSpaces.length;
+			displayedJoinedSpaces =
+				currentFloatingSpaces.slice(0, nameCount - 2).join(', ') +
+				', ' +
+				currentFloatingSpaces.slice(nameCount - 2, nameCount).join(' & ');
+		} else {
+			displayedJoinedSpaces = currentFloatingSpaces.join(' & ');
+		}
+	}
 
-  const openInNewTab = url => {
-    let win = window.open(url, "_blank");
-    win.focus();
-  };
+	const openInNewTab = url => {
+		let win = window.open(url, '_blank');
+		win.focus();
+	};
 
-  return (
-    <SpaceSelector>
-      <BrowserView>
-        <span>
-          <SpaceInfo>
-            {displayedJoinedSpaces ? (
-              <Fragment>
-                You're in the{" "}
-                <CurrentSpace>{displayedJoinedSpaces}</CurrentSpace>!
-              </Fragment>
-            ) : (
-              <Fragment>
-                <div>Click on a portal</div>
-              </Fragment>
-            )}
-          </SpaceInfo>
-        </span>
-        <div>
-          <div className="m-grid-container">
-            <svg
-              className="frame"
-              // xmlns:svg='http://www.w3.org/2000/svg'
-              xmlns="http://www.w3.org/2000/svg"
-              preserveAspectRatio="xMidYMid meet"
-              viewBox="1 1 36 40"
-              id="svg"
-            >
-              <g id="shapes">
-                <path
-                  className="path-hex "
-                  d="M 19,5 L 33,13 L 33,29 L 19,37 L 5,29 L 5,13 L 19,5 z "
-                  id="octagon"
-                />
-                <path
-                  className="path-hex "
-                  d="M 19,5 L 5,29 L 33,29 L 19,5 z "
-                  id="triange-up"
-                />
-                <path
-                  className="path-hex "
-                  d="M 5,13 L 19,37 L 33,13 L 5,13 z "
-                  id="triange-down"
-                />
-                <path
-                  className="path-hex inner"
-                  d="M 19,13 L 12,17 L 12,25 L 19,29 L 26,25 L 26,17 L 19,13 z "
-                  id="octagon-inner"
-                />
-                <path
-                  className="path-hex "
-                  d="M 12,25 L 19,5 L 26,25 L 12,25 z "
-                  id="path2894"
-                />
-                <path
-                  className="path-hex "
-                  d="M 19,37 L 12,17 L 26,17 L 19,37 z "
-                  id="path2896"
-                />
-                <path className="path-hex " d="M 5,13 L 33,29" id="line-6-3" />
-                <path className="path-hex " d="M 5,29 L 33,13" id="line-6-2" />
-                <path className="path-hex " d="M 19,5 L 19,37" id="line=-1-3" />
-                <path
-                  className="path-hex "
-                  d="M 5,29 L 19,13 L 26,25 L 5,29 z "
-                  id="path2904"
-                />
-                <path
-                  className="path-hex "
-                  d="M 33,29 L 19,13 L 12,25 L 33,29 z "
-                  id="path2906"
-                />
-                <path
-                  className="path-hex "
-                  d="M 33,13 L 12,17 L 19,29 L 33,13 z "
-                  id="path2908"
-                />
-                <path
-                  className="path-hex "
-                  d="M 5,13 L 19,29 L 26,17 L 5,13 z "
-                  id="path2910"
-                />
-              </g>
-            </svg>
-            <div
-              id="c0"
-              className="circle row-1 c-center c-1 click-zone"
-              onClick={() => addFloatingSpace("parallel-society")}
-            >
-              <span className="roomName">Parallel Society</span>
-            </div>
-            <div
-              id="c1"
-              className="circle row-2 c-right click-zone"
-              onClick={() => addFloatingSpace("metatrack")}
-            >
-              <span className="roomName">Metatrack</span>
-            </div>
-            <div id="c2" className="circle row-6 c-right click-zone"></div>
-            <div
-              id="c3"
-              className="circle row-7 c-center click-zone"
-              onClick={() => openInNewTab("https://portal.interspace.chat")}
-            >
-              <span className="roomName">Open New Room</span>
-            </div>
-            <div id="c4" className="circle row-6 c-left click-zone"></div>
-            <div
-              id="c5"
-              className="circle row-2 c-left click-zone"
-              onClick={() => addFloatingSpace("cryptoeconomics-lab")}
-            >
-              <span className="roomName">Cryptoeconomics Lab</span>
-            </div>
+	const featureNotHereYet = () => {
+		alert('This feature will only be available at the start of the conference');
+	};
 
-            <div
-              id="c6"
-              className="circle row-2 c-center click-zone"
-              onClick={() => addFloatingSpace("discord chat")}
-            >
-              <span className="roomName">Discord Chat</span>
-            </div>
+	return (
+		<SpaceSelector>
+			<BrowserView>
+				<span>
+					<SpaceInfo>
+						{displayedJoinedSpaces ? (
+							<Fragment>
+								You're in the{' '}
+								<CurrentSpace>{displayedJoinedSpaces}</CurrentSpace>!
+							</Fragment>
+						) : (
+							<Fragment>
+								<div>Click on a portal</div>
+							</Fragment>
+						)}
+					</SpaceInfo>
+				</span>
+				<div>
+					<div className='m-grid-container'>
+						<svg
+							className='frame'
+							// xmlns:svg='http://www.w3.org/2000/svg'
+							xmlns='http://www.w3.org/2000/svg'
+							preserveAspectRatio='xMidYMid meet'
+							viewBox='1 1 36 40'
+							id='svg'>
+							<g id='shapes'>
+								<path
+									className='path-hex '
+									d='M 19,5 L 33,13 L 33,29 L 19,37 L 5,29 L 5,13 L 19,5 z '
+									id='octagon'
+								/>
+								<path
+									className='path-hex '
+									d='M 19,5 L 5,29 L 33,29 L 19,5 z '
+									id='triange-up'
+								/>
+								<path
+									className='path-hex '
+									d='M 5,13 L 19,37 L 33,13 L 5,13 z '
+									id='triange-down'
+								/>
+								<path
+									className='path-hex inner'
+									d='M 19,13 L 12,17 L 12,25 L 19,29 L 26,25 L 26,17 L 19,13 z '
+									id='octagon-inner'
+								/>
+								<path
+									className='path-hex '
+									d='M 12,25 L 19,5 L 26,25 L 12,25 z '
+									id='path2894'
+								/>
+								<path
+									className='path-hex '
+									d='M 19,37 L 12,17 L 26,17 L 19,37 z '
+									id='path2896'
+								/>
+								<path className='path-hex ' d='M 5,13 L 33,29' id='line-6-3' />
+								<path className='path-hex ' d='M 5,29 L 33,13' id='line-6-2' />
+								<path className='path-hex ' d='M 19,5 L 19,37' id='line=-1-3' />
+								<path
+									className='path-hex '
+									d='M 5,29 L 19,13 L 26,25 L 5,29 z '
+									id='path2904'
+								/>
+								<path
+									className='path-hex '
+									d='M 33,29 L 19,13 L 12,25 L 33,29 z '
+									id='path2906'
+								/>
+								<path
+									className='path-hex '
+									d='M 33,13 L 12,17 L 19,29 L 33,13 z '
+									id='path2908'
+								/>
+								<path
+									className='path-hex '
+									d='M 5,13 L 19,29 L 26,17 L 5,13 z '
+									id='path2910'
+								/>
+							</g>
+						</svg>
+						<div
+							id='c0'
+							className='circle row-1 c-center c-1 click-zone'
+							onClick={() => addFloatingSpace('calendar')}></div>
+						<div
+							id='c1'
+							className='circle row-2 c-right click-zone'
+							onClick={() => featureNotHereYet()}></div>
+						<div
+							id='c2'
+							className='circle row-6 c-right click-zone'
+							onClick={() =>
+								openInNewTab('https://vron.at/cryptowiener/')
+							}></div>
+						<div
+							id='c3'
+							className='circle row-7 c-center click-zone'
+							onClick={() => addFloatingSpace('loft.radio')}></div>
+						<div
+							id='c4'
+							className='circle row-6 c-left click-zone'
+							onClick={() => openInNewTab('https://discord.gg/9s8U8Bn')}></div>
+						<div
+							id='c5'
+							className='circle row-2 c-left click-zone'
+							onClick={() => featureNotHereYet()}></div>
 
-            <div id="c7" className="circle row-3 c-center-right"></div>
+						<div
+							id='c6'
+							className='circle row-2 c-center click-zone'
+							onClick={() => addFloatingSpace('parallel-society')}></div>
 
-            <div id="c8" className="circle row-5 c-center-right"></div>
-            <div
-              id="c9"
-              className="circle row-6 c-center click-zone"
-              onClick={() => addFloatingSpace("loft.radio")}
-            >
-              <span className="roomName">loft.radio</span>
-            </div>
-            <div id="c10" className="circle row-5 c-center-left"></div>
-            <div id="c11" className="circle row-3 c-center-left"></div>
+						<div
+							id='c7'
+							className='circle row-3 c-center-right click-zone'
+							onClick={() => featureNotHereYet()}></div>
 
-            <div
-              id="c12"
-              className="circle row-4 c-center click-zone"
-              onClick={() => addFloatingSpace("calendar")}
-            >
-              <span className="roomName">Event calendar</span>
-            </div>
-          </div>
-          {/*
-        <span className="mapInstructions">
-          Click a location to join a conversation.
-        </span>
-        */}
-        </div>
-      </BrowserView>
-      <MobileView>
-        <MobileContainer>
-          <Headline>
-            Welcome to{" "}
-            <a
-              href="https://interspace.chat"
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ textDecoration: "none" }}
-            >
-              interspace.chat
-            </a>
-          </Headline>
-          <Descripton>
-            <p> Click below to enter the videochat</p>
+						<div
+							id='c8'
+							className='circle row-5 c-center-right click-zone'
+							onClick={() => featureNotHereYet()}></div>
+						<div
+							id='c9'
+							className='circle row-6 c-center click-zone'
+							onClick={() => addFloatingSpace('about')}></div>
+						<div
+							id='c10'
+							className='circle row-5 c-center-left click-zone'
+							onClick={() => addFloatingSpace('discord chat')}></div>
+						<div
+							id='c11'
+							className='circle row-3 c-center-left click-zone'
+							onClick={() => featureNotHereYet()}></div>
 
-            <a href="https://portal.interspace.chat">or open a new room</a>
-          </Descripton>
-          <MobileSelectorContainer>
+						<div
+							id='c12'
+							className='circle row-4 c-center click-zone'
+							onClick={() => addFloatingSpace('about')}></div>
+					</div>
+				</div>
+			</BrowserView>
+			<MobileView>
+				<MobileContainer>
+					<Headline>
+						Welcome to{' '}
+						<a
+							href='https://noncon.interspace.chat'
+							target='_blank'
+							rel='noopener noreferrer'
+							style={{ textDecoration: 'none' }}>
+							NONCON 2020
+						</a>
+					</Headline>
+					<Descripton>
+						<p>This website supports desktop only. </p>
+						<StrongStyled>Sorry for the inconvenience.</StrongStyled>
+						<p>
+							You can watch our livestream and maybe hack your way into it, but
+							there is no official support.
+						</p>
+
+						{/**<a href="https://portal.interspace.chat">or open a new room</a>**/}
+					</Descripton>
+					{/**
+					<MobileSelectorContainer>
+						
             <Room roomName="capsule1" />
             <Room roomName="capsule2" />
+            
           </MobileSelectorContainer>
+          
           <JitsiInstanceMobile />
-        </MobileContainer>
-      </MobileView>
-    </SpaceSelector>
-  );
+          */}
+				</MobileContainer>
+			</MobileView>
+		</SpaceSelector>
+	);
 };
 
 export default Space;

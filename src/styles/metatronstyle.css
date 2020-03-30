@@ -42,9 +42,10 @@ body {
     -ms-grid-row-span: 39;
     grid-row-end: 40; }
     .m-grid-container .frame .path-hex {
-      stroke-width: 0.08;
-      stroke: rgba(255, 0, 0, 0.041);
-      fill: none; }
+      stroke-width: 0.05;
+      stroke: rgb(255, 0, 0);
+      fill: none; 
+    }
     .m-grid-container .frame .animated {
       stroke-width: 0.1;
       stroke: rgba(255, 0, 0, 0.4);
@@ -54,7 +55,7 @@ body {
       animation: 4s dash ease-in forwards; }
     .m-grid-container .frame .path-circle {
       stroke-width: 0.05;
-      stroke: rgba(255, 0, 0, 0.295);
+      stroke: rgba(255, 0, 0);
       fill: none;
       stroke-dasharray: 210;
       -webkit-animation: 5s dash2 ease-in;
@@ -99,17 +100,19 @@ body {
     stroke-dashoffset: 10; }
   100% {
     opacity: 0; } }
-  .m-grid-container .circle {
+  .m-grid-container .circle {/**
     background: -webkit-radial-gradient(50% 50%, 40% 40%, rgba(255, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
     background: -o-radial-gradient(50% 50%, 40% 40%, rgba(255, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
     background: radial-gradient(40% 40% at 50% 50%, rgba(255, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.1) 100%);
+    **/
+    
     border-radius: 100%;
     display: block;
     -webkit-transition: 3s ease-in;
     -o-transition: 3s ease-in;
     transition: 3s ease-in;
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgb(255, 0, 0);
     z-index: 999; }
     .m-grid-container .circle:after {
       content: "";
