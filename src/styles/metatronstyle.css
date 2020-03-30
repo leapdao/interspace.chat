@@ -55,7 +55,7 @@ body {
       animation: 4s dash ease-in forwards; }
     .m-grid-container .frame .path-circle {
       stroke-width: 0.05;
-      stroke: rgba(255, 0, 0, 0.295);
+      stroke: rgba(255, 0, 0);
       fill: none;
       stroke-dasharray: 210;
       -webkit-animation: 5s dash2 ease-in;
