@@ -45,7 +45,6 @@ const SpaceContent = styled.div`
 const spaceContainerStyle = {
   padding: "15px",
   paddingTop: "0px",
-  backgroundColor: "#000000bb",
   // backdropFilter: "blur(4px)",
   borderRadius: "10px",
   cursor: "all-scroll",
@@ -146,7 +145,21 @@ function FloatingRoomWindow() {
     return windowOriginY;
   };
 
-  return currentFloatingSpaces.map(windowKey => (
+  const setFloatingwindowColor = windowKey => {
+    let bgColor = "#000000bb";
+    if (windowKey === "parallel-society") {
+      bgColor = "#ff0000bb";
+    } else if (windowKey === "metatrack") {
+      bgColor = "#8e24aabb";
+    } else if (windowKey === "cryptoeconomics-lab") {
+      bgColor = "#4285f4bb";
+    } else {
+      bgColor = "#000000bb"
+    }
+    return bgColor;
+  };
+
+  return currentFloatingSpaces.map((windowKey) => (
     <Rnd
       key={windowKey}
       default={{
@@ -157,6 +170,7 @@ function FloatingRoomWindow() {
       }}
       style={{
         ...spaceContainerStyle,
+        backgroundColor: setFloatingwindowColor(windowKey),
         zIndex: zIndexes[windowKey] || 1
       }}
       onDragStart={() => setWindowFocus(windowKey)}
