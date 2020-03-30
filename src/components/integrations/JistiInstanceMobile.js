@@ -1,8 +1,6 @@
 import React, { useEffect, useContext } from "react";
 import { SpaceContext } from "../../contexts/SpaceContext";
-// import { UserContext } from "../contexts/UserContext";
 import styled from "styled-components";
-// import * as JitsiMeetExternalAPI from "../dist/jitsi";
 import "../../App.css";
 
 const JitsiMeetExternalAPI = window.JitsiMeetExternalAPI;
@@ -23,18 +21,14 @@ const JitsiContainer = styled.div`
 
 const JitsiInstanceMobile = () => {
   const { currentSpace } = useContext(SpaceContext);
-  // const { user } = useContext(UserContext);
-
-  //  const width = 1024;
   const height = 400;
 
   useEffect(() => {
-    const domain = "gehma.aufabier.at";
+    const domain = "portal.interspace.chat";
     const options = {
       roomName: currentSpace,
       //     width: width,
       height: height,
-      interfaceConfigOverwrite: { defaultLanguage: `de` },
       parentNode: document.querySelector("#meet")
     };
     const api = new JitsiMeetExternalAPI(domain, options);

@@ -1,7 +1,6 @@
 import React, { useEffect, useContext, useReducer } from "react";
 import styled from "styled-components";
 import { Rnd } from "react-rnd";
-import Collapsible from "react-collapsible";
 
 import { FloatingSpaceContext } from "../contexts/FloatingSpaceContext";
 import LoftRadioInstance from "./integrations/LoftRadioInstance";
@@ -108,7 +107,7 @@ function FloatingRoomWindow() {
         setZIndexes({ key: space, value: ++tempMax });
       }
     });
-  }, [currentFloatingSpaces]);
+  }, [currentFloatingSpaces, maxZ, zIndexes]);
 
   function setWindowFocus(windowKey) {
     setZIndexes({ key: windowKey, value: maxZ + 1 });
