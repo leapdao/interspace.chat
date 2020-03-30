@@ -14,7 +14,6 @@
 }
 
 html {
-  height: auto;
   background-color: rgb(255, 255, 255);
   /** background-image: url(./img/spacebackground3.jpg); **/
   background-size: cover;
@@ -155,104 +154,132 @@ body {
 
 #c0 {
   background-image: url(./img/noncon-portals/speakerschedule.png);
+  background-size: contain;
 }
 
 #c0:hover {
   background-image: url(./img/noncon-portals/speakerschedule-hover.png);
+  background-size: contain;
 }
 
 #c1 {
   background-image: url(./img/noncon-portals/metatrack.png);
+  background-size: contain;
 }
 
 #c1:hover {  background-image: url(./img/noncon-portals/metatrack-hover.png);
+  background-size: contain;
 }
 
 #c2 {
   background-image: url(./img/noncon-portals/cryptowiener.png);
+  background-size: contain;
 }
 
 #c2:hover {
-  background-image: url(./img/noncon-portals/cryptowiener-hover.png);}
+  background-image: url(./img/noncon-portals/cryptowiener-hover.png);
+  background-size: contain;
+}
+  
 
 #c3 {
   background: url(./img/noncon-portals/loftradio.png);
+  background-size: contain;
 }
 
 #c3:hover {
   background: url(./img/noncon-portals/loftradio-hover.png);
+  background-size: contain;
 }
 
 #c4 {
   background: url(./img/noncon-portals/claimpopetoken.png);
+  background-size: contain;
 }
 
 #c4:hover {
   background: url(./img/noncon-portals/claimpopetoken-hover.png);
+  background-size: contain;
 }
 
 #c5 {
   background: url(./img/noncon-portals/cryptoeconomicslab.png);
+  background-size: contain;
 }
 
 #c5:hover {
   background: url(./img/noncon-portals/cryptoeconomicslab-hover.png);
+  background-size: contain;
 }
 
 #c6 {
   background: url(./img/noncon-portals/parallelsociety.png);
+  background-size: contain;
 }
 
 #c6:hover{
   background: url(./img/noncon-portals/parallelsociety-hover.png);
+  background-size: contain;
 }
 
 #c7 {
   background: url(./img/noncon-portals/vrhub.png);
+  background-size: contain;
 }
 
 #c7:hover{ 
   background: url(./img/noncon-portals/vrhub-hover.png);
+  background-size: contain;
 }
 
 #c8 {
   background: url(./img/noncon-portals/createroom.png);
+  background-size: contain;
 }
 
 #c8:hover{
   background: url(./img/noncon-portals/createroom-hover.png);
+  background-size: contain;
 }
 
 #c9 {
   background: url(./img/noncon-portals/donate.png);
+  background-size: contain;
 }
 
 #c9:hover{
   background: url(./img/noncon-portals/donate-hover.png);
+  background-size: contain;
 }
 
 #c10 {
   background: url(./img/noncon-portals/discordchat.png);
+  background-size: contain;
 }
 
 #c10:hover {
   background: url(./img/noncon-portals/discordchat-hover.png);
+  background-size: contain;
 }
 
 #c11 {
   background: url(./img/noncon-portals/livestreams.png);
+  background-size: contain;
 }
 
 #c11:hover {
   background: url(./img/noncon-portals/livestreams-hover.png);
+  background-size: contain;
 }
 
 #c12 {
   background: url(./img/noncon-portals/about.png);
+  background-size: contain;
 }
 
 #c12:hover {
   background: url(./img/noncon-portals/about-hover.png);
+  background-size: contain;
 }
 
 .click-zone:hover .click-zone-highlight {
