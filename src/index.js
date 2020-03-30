@@ -8,7 +8,7 @@ import WebFont from "webfontloader";
 
 WebFont.load({
   google: {
-    families: ["Comfortaa:300,400,55,600,700", "sans-serif"]
+    families: ["Roboto:100,300,400,500,700,900", "sans-serif"]
   }
 });
 

@@ -10,13 +10,16 @@ import CalendarInstance from "./integrations/CalendarInstance";
 import RoomInstance from "./integrations/RoomInstance";
 import { RoomNames } from "../utils/constants";
 
-const width = window.innerWidth / 2;
-const height = window.innerHeight / 2;
+const width = window.innerWidth - 200;
+const height = window.innerHeight - 200;
 
 const SpaceHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  .windowKey {
+    color: whitesmoke;
+  }
 `;
 const SpaceHeaderElement = styled.div`
   margin: 0.5rem;
@@ -32,12 +35,15 @@ const SpaceContainer = styled.div`
 const SpaceContent = styled.div`
   width: 100%;
   flex: 1;
+  div {
+    color: #ffffff;
+  }
 `;
 
 const spaceContainerStyle = {
   padding: "15px",
   paddingTop: "0px",
-  backgroundColor: "#36393ecc",
+  backgroundColor: "#000000bb",
   // backdropFilter: "blur(4px)",
   borderRadius: "10px",
   cursor: "all-scroll",
@@ -140,8 +146,8 @@ function FloatingRoomWindow() {
     <Rnd
       key={windowKey}
       default={{
-        x: setStartingCoordinatesX(windowKey),
-        y: setStartingCoordinatesY(windowKey),
+        x: 100, // setStartingCoordinatesX(windowKey),
+        y: 40, // setStartingCoordinatesY(windowKey),
         width: width - 20,
         height: height - 20
       }}
@@ -156,7 +162,9 @@ function FloatingRoomWindow() {
           <SpaceHeaderElement onClick={() => closeFloatingSpace(windowKey)}>
             <Closer />
           </SpaceHeaderElement>
-          <SpaceHeaderElement>{windowKey}</SpaceHeaderElement>
+          <SpaceHeaderElement className="windowKey">
+            {windowKey}
+          </SpaceHeaderElement>
           <SpaceHeaderElement></SpaceHeaderElement>
         </SpaceHeader>
         <SpaceContent>{getFloatingRoomWindow(windowKey)}</SpaceContent>

@@ -70,7 +70,7 @@ const Descripton = styled.div`
 `;
 
 const CurrentSpace = styled.span`
-  color: whitesmoke;
+  color: #ff0000;
 `;
 
 const MobileContainer = styled.div`
@@ -196,62 +196,62 @@ const Space = () => {
             <div
               id="c0"
               className="circle row-1 c-center c-1 click-zone"
-              onClick={() => addFloatingSpace("parallel-society")}
-            >
-              <span className="roomName">Parallel Society</span>
-            </div>
+              onClick={() => addFloatingSpace("calendar")}
+            ></div>
             <div
               id="c1"
               className="circle row-2 c-right click-zone"
               onClick={() => addFloatingSpace("metatrack")}
-            >
-              <span className="roomName">Metatrack</span>
-            </div>
-            <div id="c2" className="circle row-6 c-right click-zone"></div>
+            ></div>
+            <div
+              id="c2"
+              className="circle row-6 c-right click-zone"
+              onClick={() => openInNewTab("https://vron.at/cryptowiener/")}
+            ></div>
             <div
               id="c3"
               className="circle row-7 c-center click-zone"
-              onClick={() => openInNewTab("https://portal.interspace.chat")}
-            >
-              <span className="roomName">Open New Room</span>
-            </div>
-            <div id="c4" className="circle row-6 c-left click-zone"></div>
+              onClick={() => addFloatingSpace("loft.radio")}
+            ></div>
+            <div
+              id="c4"
+              className="circle row-6 c-left click-zone"
+              onClick={() => openInNewTab("https://www.poap.xyz/")}
+            ></div>
             <div
               id="c5"
               className="circle row-2 c-left click-zone"
               onClick={() => addFloatingSpace("cryptoeconomics-lab")}
-            >
-              <span className="roomName">Cryptoeconomics Lab</span>
-            </div>
+            ></div>
 
             <div
               id="c6"
               className="circle row-2 c-center click-zone"
-              onClick={() => addFloatingSpace("discord chat")}
-            >
-              <span className="roomName">Discord Chat</span>
-            </div>
+              onClick={() => addFloatingSpace("parallel-society")}
+            ></div>
 
-            <div id="c7" className="circle row-3 c-center-right"></div>
-
-            <div id="c8" className="circle row-5 c-center-right"></div>
             <div
-              id="c9"
-              className="circle row-6 c-center click-zone"
-              onClick={() => addFloatingSpace("loft.radio")}
-            >
-              <span className="roomName">loft.radio</span>
-            </div>
-            <div id="c10" className="circle row-5 c-center-left"></div>
+              id="c7"
+              className="circle row-3 c-center-right"
+              onClick={() =>
+                openInNewTab("https://hubs.mozilla.com/eJZGNU5/house-of-daos")
+              }
+            ></div>
+
+            <div
+              id="c8"
+              className="circle row-5 c-center-right"
+              onClick={() => openInNewTab("https://portal.interspace.chat")}
+            ></div>
+            <div id="c9" className="circle row-6 c-center click-zone"></div>
+            <div
+              id="c10"
+              className="circle row-5 c-center-left"
+              onClick={() => addFloatingSpace("discord chat")}
+            ></div>
             <div id="c11" className="circle row-3 c-center-left"></div>
 
-            <div
-              id="c12"
-              className="circle row-4 c-center click-zone"
-              onClick={() => addFloatingSpace("calendar")}
-            >
-              <span className="roomName">Event calendar</span>
-            </div>
+            <div id="c12" className="circle row-4 c-center click-zone"></div>
           </div>
           {/*
         <span className="mapInstructions">

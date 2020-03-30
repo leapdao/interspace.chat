@@ -1,26 +1,26 @@
 @font-face {
-  font-family: 'Comfortaa';
+  font-family: 'Roboto','Helvetica Neue';
   font-style: normal;
-  font-weight: 300, 400;
-  src: url('https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap');
+  font-weight: 100, 300, 400, 500, 900;
+  src: url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,900&display=swap");
 }
 
 
 * {
-  font-family: "Comfortaa", sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   font-weight: 300;
   font-size: 14px;
   color: black;
 }
 
 html {
-  height: 100%;
+  height: auto;
   background-color: rgb(255, 255, 255);
   /** background-image: url(./img/spacebackground3.jpg); **/
   background-size: cover;
   /** background-repeat: repeat; **/
   background-blend-mode: soft-light;
-  box-shadow: inset 0px 0px 100px 100px rgba(29, 0, 0, 0.1);
+  /** box-shadow: inset 0px 0px 100px 100px rgba(29, 0, 0, 0.1);**/
   margin: 0px;
   padding: 0px;
 }
@@ -154,100 +154,105 @@ body {
 }
 
 #c0 {
-  background-position: center;
+  background-image: url(./img/noncon-portals/speakerschedule.png);
 }
 
 #c0:hover {
-  background-color: rgb(0,0,0);
-  background-image: url(./img/parallele.png);
-  background-size: 80%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url(./img/noncon-portals/speakerschedule-hover.png);
 }
 
 #c1 {
-  background-position: center;
+  background-image: url(./img/noncon-portals/metatrack.png);
 }
 
-#c1:hover {  
-  background-color: whitesmoke;
-  background: url(./img/metacartel.png);
-  background-size: 80%;
-  background-repeat: no-repeat;
-  background-position: center;
+#c1:hover {  background-image: url(./img/noncon-portals/metatrack-hover.png);
+}
+
+#c2 {
+  background-image: url(./img/noncon-portals/cryptowiener.png);
 }
 
 #c2:hover {
-  filter: saturate(0);
-  
-  background-size: cover;
+  background-image: url(./img/noncon-portals/cryptowiener-hover.png);}
+
+#c3 {
+  background: url(./img/noncon-portals/loftradio.png);
 }
 
 #c3:hover {
-  background: url(./img/vortex.png);
-  background-size: cover;
+  background: url(./img/noncon-portals/loftradio-hover.png);
+}
+
+#c4 {
+  background: url(./img/noncon-portals/claimpopetoken.png);
 }
 
 #c4:hover {
-  
-  background-size: cover;
+  background: url(./img/noncon-portals/claimpopetoken-hover.png);
+}
+
+#c5 {
+  background: url(./img/noncon-portals/cryptoeconomicslab.png);
 }
 
 #c5:hover {
-  background: url(./img/ethereum.png);
-  background-color: rgb(255, 251, 0);
-  background-size: cover;
+  background: url(./img/noncon-portals/cryptoeconomicslab-hover.png);
 }
 
 #c6 {
-  background-position: center;
+  background: url(./img/noncon-portals/parallelsociety.png);
 }
 
 #c6:hover{
-  
-  background: url(./img/discord.png);
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: url(./img/noncon-portals/parallelsociety-hover.png);
 }
 
-
-#c7:hover{
-  background-size: cover;
+#c7 {
+  background: url(./img/noncon-portals/vrhub.png);
 }
 
+#c7:hover{ 
+  background: url(./img/noncon-portals/vrhub-hover.png);
+}
+
+#c8 {
+  background: url(./img/noncon-portals/createroom.png);
+}
 
 #c8:hover{
-  
-  background-size: cover;
+  background: url(./img/noncon-portals/createroom-hover.png);
 }
 
+#c9 {
+  background: url(./img/noncon-portals/donate.png);
+}
 
 #c9:hover{
-  background: url(./img/loftradio.png);
-  background-size: cover;
+  background: url(./img/noncon-portals/donate-hover.png);
+}
+
+#c10 {
+  background: url(./img/noncon-portals/discordchat.png);
 }
 
 #c10:hover {
-  
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: url(./img/noncon-portals/discordchat-hover.png);
+}
+
+#c11 {
+  background: url(./img/noncon-portals/livestreams.png);
 }
 
 #c11:hover {
-  
-  background-size: cover;
+  background: url(./img/noncon-portals/livestreams-hover.png);
 }
 
 #c12 {
-  background-position: center;
+  background: url(./img/noncon-portals/about.png);
 }
 
 #c12:hover {
-  background: url(./img/sun.jpg);
-  background-size: 60%;
-  background-repeat: no-repeat;
-  background-position: center;
+  background: url(./img/noncon-portals/about-hover.png);
 }
 
 .click-zone:hover .click-zone-highlight {
