@@ -78,6 +78,8 @@ function getFloatingRoomWindow(windowKey) {
     return <RoomInstance space={windowKey} />;
   } else if (windowKey === "discord chat") {
     return <ChatInstance />;
+  }else if (windowKey === "proof your attendance") {
+    return <ChatInstance />;
   } else if (windowKey === "calendar") {
     return <CalendarInstance />;
   } else if (windowKey === "youtube") {
@@ -124,7 +126,7 @@ function FloatingRoomWindow() {
 
   const setStartingCoordinatesX = windowKey => {
     let windowOriginX = 20;
-    if (windowKey === "discord chat") {
+    if (windowKey === "discord chat" || "proof your attendance") {
       windowOriginX = width;
     } else if (windowKey === "calendar") {
       windowOriginX = width;
@@ -135,7 +137,7 @@ function FloatingRoomWindow() {
   };
   const setStartingCoordinatesY = windowKey => {
     let windowOriginY = 40;
-    if (windowKey === "discord chat") {
+    if (windowKey === "discord chat" || "proof your attendance") {
       windowOriginY = 40;
     } else if (windowKey === "calendar") {
       windowOriginY = height + 10;
