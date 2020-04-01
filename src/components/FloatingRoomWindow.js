@@ -3,14 +3,19 @@ import styled from "styled-components";
 import { Rnd } from "react-rnd";
 
 import { FloatingSpaceContext } from "../contexts/FloatingSpaceContext";
+
 import LoftRadioInstance from "./integrations/LoftRadioInstance";
 import YoutubeInstance from "./integrations/YoutubeInstance";
 import ChatInstance from "./integrations/ChatInstance";
 import CalendarInstance from "./integrations/CalendarInstance";
+import HubInstance from "./integrations/HubInstance"
 import RoomInstance from "./integrations/RoomInstance";
-import { RoomNames } from "../utils/constants";
 
 import AboutInstance from "./external-sites/AboutInstance"
+import DonateInstance from "./external-sites/DonateInstance"
+import HelpInstance from "./external-sites/HelpInstance"
+
+import { RoomNames } from "../utils/constants";
 
 const width = window.innerWidth / 2;
 const height = window.innerHeight / 2;
@@ -78,17 +83,22 @@ function getFloatingRoomWindow(windowKey) {
     return <RoomInstance space={windowKey} />;
   } else if (windowKey === "discord chat") {
     return <ChatInstance />;
-  }else if (windowKey === "proof your attendance") {
+  } else if (windowKey === "proof your attendance") {
     return <ChatInstance />;
   } else if (windowKey === "calendar") {
     return <CalendarInstance />;
   } else if (windowKey === "youtube") {
     return <YoutubeInstance />;
   } else if (windowKey === "hub") {
-    return <ChatInstance />;
+    return <HubInstance />;
   } else if (windowKey === "about") {
     return <AboutInstance />;
-  } else if (windowKey === null) {
+  } else if (windowKey === "donate") {
+    return <DonateInstance />;
+  } else if (windowKey === "help") {
+    return <HelpInstance />;
+  }
+   else if (windowKey === null) {
     return null;
   }
 }

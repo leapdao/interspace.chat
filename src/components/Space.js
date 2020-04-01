@@ -214,12 +214,14 @@ const Space = () => {
 						<div
 							id='c1'
 							className='circle row-2 c-right click-zone'
-							onClick={() => featureNotHereYet()}></div>
+							onClick={() => addFloatingSpace('metatrack')}></div>
 						<div
 							id='c2'
 							className='circle row-6 c-right click-zone'
 							onClick={() =>
-								openInNewTab('https://vron.at/cryptowiener/')
+								openInNewTab(
+									'https://www.cryptovoxels.com/play?coords=E@330E,127N'
+								)
 							}></div>
 						<div
 							id='c3'
@@ -232,7 +234,7 @@ const Space = () => {
 						<div
 							id='c5'
 							className='circle row-2 c-left click-zone'
-							onClick={() => featureNotHereYet()}></div>
+							onClick={() => addFloatingSpace('cryptoeconomics-lab')}></div>
 
 						<div
 							id='c6'
@@ -242,7 +244,7 @@ const Space = () => {
 						<div
 							id='c7'
 							className='circle row-3 c-center-right click-zone'
-							onClick={() => featureNotHereYet()}></div>
+							onClick={() => addFloatingSpace('hub')}></div>
 
 						<div
 							id='c8'
