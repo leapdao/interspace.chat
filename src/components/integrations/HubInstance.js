@@ -1,16 +1,16 @@
-import React from "react";
+import React from 'react';
 
-function HubInstance({width, height, roomData}) {
-  return (
-    <iframe
-      title="Mozilla hub conference room"
-      width={width}
-      height={height}
-      frameBorder="0"
-      src={roomData.embedUrl}
-      allow="microphone; camera; vr; speaker;"
-    />
-  )
+function HubInstance() {
+	return (
+		<iframe
+			title='Mozilla hub conference room'
+			width='100%'
+			height='100%'
+			frameBorder='0'
+			src='https://hubs.mozilla.com/nKCuNrg/house-of-defiance'
+			allow='microphone; camera; vr; speaker;'
+		/>
+	);
 }
 
 export default HubInstance;

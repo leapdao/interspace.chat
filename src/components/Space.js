@@ -12,7 +12,7 @@ import JitsiInstanceMobile from './integrations/JistiInstanceMobile';
 
 const Headline = styled.h6`
 	color: black;
-	font-weight: 600;
+	font-weight: 500;
 	font-size: 1.3rem;
 	padding: 1rem;
 
@@ -31,6 +31,7 @@ const Headline = styled.h6`
 const SpaceSelector = styled.nav`
 	padding-bottom: 1rem;
 	width: 100%;
+	font-weight: 500;
 
 	@media (max-width: 600px) {
 		padding: 0px;
@@ -43,6 +44,7 @@ const SpaceInfo = styled.div`
 	padding-top: 1rem;
 	margin: 0 auto;
 	font-size: 1rem;
+	font-weight: 500;
 	z-index: 100;
 	div {
 		color: red;
@@ -212,12 +214,14 @@ const Space = () => {
 						<div
 							id='c1'
 							className='circle row-2 c-right click-zone'
-							onClick={() => featureNotHereYet()}></div>
+							onClick={() => addFloatingSpace('metatrack')}></div>
 						<div
 							id='c2'
 							className='circle row-6 c-right click-zone'
 							onClick={() =>
-								openInNewTab('https://vron.at/cryptowiener/')
+								openInNewTab(
+									'https://www.cryptovoxels.com/play?coords=E@330E,127N'
+								)
 							}></div>
 						<div
 							id='c3'
@@ -226,11 +230,11 @@ const Space = () => {
 						<div
 							id='c4'
 							className='circle row-6 c-left click-zone'
-							onClick={() => openInNewTab('https://discord.gg/9s8U8Bn')}></div>
+							onClick={() => addFloatingSpace('proof your attendance')}></div>
 						<div
 							id='c5'
 							className='circle row-2 c-left click-zone'
-							onClick={() => featureNotHereYet()}></div>
+							onClick={() => addFloatingSpace('cryptoeconomics-lab')}></div>
 
 						<div
 							id='c6'
@@ -240,7 +244,11 @@ const Space = () => {
 						<div
 							id='c7'
 							className='circle row-3 c-center-right click-zone'
-							onClick={() => featureNotHereYet()}></div>
+							onClick={() =>
+								openInNewTab(
+									'https://hubs.mozilla.com/nKCuNrg/house-of-defiance'
+								)
+							}></div>
 
 						<div
 							id='c8'

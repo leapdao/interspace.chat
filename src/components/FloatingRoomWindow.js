@@ -3,14 +3,19 @@ import styled from "styled-components";
 import { Rnd } from "react-rnd";
 
 import { FloatingSpaceContext } from "../contexts/FloatingSpaceContext";
+
 import LoftRadioInstance from "./integrations/LoftRadioInstance";
 import YoutubeInstance from "./integrations/YoutubeInstance";
 import ChatInstance from "./integrations/ChatInstance";
 import CalendarInstance from "./integrations/CalendarInstance";
+import HubInstance from "./integrations/HubInstance"
 import RoomInstance from "./integrations/RoomInstance";
-import { RoomNames } from "../utils/constants";
 
 import AboutInstance from "./external-sites/AboutInstance"
+import DonateInstance from "./external-sites/DonateInstance"
+import HelpInstance from "./external-sites/HelpInstance"
+
+import { RoomNames } from "../utils/constants";
 
 const width = window.innerWidth / 2;
 const height = window.innerHeight / 2;
@@ -45,7 +50,6 @@ const SpaceContent = styled.div`
 const spaceContainerStyle = {
   padding: "15px",
   paddingTop: "0px",
-  backgroundColor: "#000000bb",
   // backdropFilter: "blur(4px)",
   borderRadius: "10px",
   cursor: "all-scroll",
@@ -79,15 +83,22 @@ function getFloatingRoomWindow(windowKey) {
     return <RoomInstance space={windowKey} />;
   } else if (windowKey === "discord chat") {
     return <ChatInstance />;
+  } else if (windowKey === "proof your attendance") {
+    return <ChatInstance />;
   } else if (windowKey === "calendar") {
     return <CalendarInstance />;
   } else if (windowKey === "youtube") {
     return <YoutubeInstance />;
   } else if (windowKey === "hub") {
-    return <ChatInstance />;
+    return <HubInstance />;
   } else if (windowKey === "about") {
     return <AboutInstance />;
-  } else if (windowKey === null) {
+  } else if (windowKey === "donate") {
+    return <DonateInstance />;
+  } else if (windowKey === "help") {
+    return <HelpInstance />;
+  }
+   else if (windowKey === null) {
     return null;
   }
 }
@@ -103,6 +114,8 @@ function FloatingRoomWindow() {
   const { currentFloatingSpaces, closeFloatingSpace } = useContext(
     FloatingSpaceContext
   );
+
+  const space = currentFloatingSpaces;
 
   const [zIndexes, setZIndexes] = useReducer(zIndexesReducer, {});
   const maxZ = Object.values(zIndexes).reduce(
@@ -127,26 +140,64 @@ function FloatingRoomWindow() {
     let windowOriginX = 20;
     if (windowKey === "discord chat") {
       windowOriginX = width;
-    } else if (windowKey === "calendar") {
+    }else if (windowKey === "proof your attendance") {
+      windowOriginX = width;
+    }
+    
+    else if (windowKey === "calendar") {
       windowOriginX = width;
     } else if (windowKey === "youtube") {
+      windowOriginX = 20;
+    } else {
       windowOriginX = 20;
     }
     return windowOriginX;
   };
   const setStartingCoordinatesY = windowKey => {
     let windowOriginY = 40;
-    if (windowKey === "discord chat") {
+    if (windowKey === "discord chat"){
       windowOriginY = 40;
-    } else if (windowKey === "calendar") {
+    } 
+    
+    else if (windowKey === "calendar") {
       windowOriginY = height + 10;
     } else if (windowKey === "youtube") {
       windowOriginY = height + 10;
+    } else {
+      windowOriginY = 40;
     }
     return windowOriginY;
   };
 
-  return currentFloatingSpaces.map(windowKey => (
+  const setFloatingwindowColor = windowKey => {
+    let bgColor = "#000000bb";
+    if (windowKey === "parallel-society") {
+      bgColor = "#EEA800bb";
+    } else if (windowKey === "metatrack") {
+      bgColor = "#8e24aabb";
+    } else if (windowKey === "cryptoeconomics-lab") {
+      bgColor = "#4285f4bb";
+    } else if (windowKey === "discord chat" && space.indexOf('parallel-society') > -1) {
+      bgColor = "#EEA800bb";
+    } else if (windowKey === "discord chat" && space.indexOf('cryptoeconomics-lab') > -1) {
+      bgColor = "#4285f4bb";
+    } else if (windowKey === "discord chat" && space.indexOf('metatrack') > -1) {
+      bgColor = "#8e24aabb";
+    } else if (windowKey === "youtube" && space.indexOf('parallel-society') > -1) {
+      bgColor = "#EEA800bb";
+    } else if (windowKey === "youtube" && space.indexOf('cryptoeconomics-lab') > -1) {
+      bgColor = "#4285f4bb";
+    } else if (windowKey === "youtube" && space.indexOf('metatrack') > -1) {
+      bgColor = "#8e24aabb";
+    }
+    
+    else {
+      bgColor = "#000000bb"
+    }
+    return bgColor;
+  };
+
+  return currentFloatingSpaces.map((windowKey) => (
     <Rnd
       key={windowKey}
       default={{
@@ -157,6 +208,7 @@ function FloatingRoomWindow() {
       }}
       style={{
         ...spaceContainerStyle,
+        backgroundColor: setFloatingwindowColor(windowKey),
         zIndex: zIndexes[windowKey] || 1
       }}
       onDragStart={() => setWindowFocus(windowKey)}
