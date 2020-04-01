@@ -77,7 +77,7 @@ body {
 /* DESKTOP */
 
 .roomName {
-  font-family: "Comfortaa","Roboto", "Courier New", Courier, monospace;
+  font-family: "Roboto", monospace;
   font-size: 1rem;
   position: relative;
   top: 67px;
