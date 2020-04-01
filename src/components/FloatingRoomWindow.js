@@ -16,6 +16,7 @@ import DonateInstance from "./external-sites/DonateInstance"
 import HelpInstance from "./external-sites/HelpInstance"
 
 import { RoomNames } from "../utils/constants";
+import LaunchNewRoom from "./LaunchNewRoom";
 
 const width = window.innerWidth / 2;
 const height = window.innerHeight / 2;
@@ -83,6 +84,8 @@ function getFloatingRoomWindow(windowKey) {
     return <RoomInstance space={windowKey} />;
   } else if (windowKey === "discord chat") {
     return <ChatInstance />;
+  } else if (windowKey === "new room") {
+    return <LaunchNewRoom />;
   } else if (windowKey === "claim poap token") {
     return <ChatInstance />;
   } else if (windowKey === "calendar") {

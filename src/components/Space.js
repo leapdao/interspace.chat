@@ -253,7 +253,7 @@ const Space = () => {
 						<div
 							id='c8'
 							className='circle row-5 c-center-right click-zone'
-							onClick={() => featureNotHereYet()}></div>
+							onClick={() => addFloatingSpace('new room')}></div>
 						<div
 							id='c9'
 							className='circle row-6 c-center click-zone'
