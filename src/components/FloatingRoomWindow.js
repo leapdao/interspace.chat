@@ -115,6 +115,8 @@ function FloatingRoomWindow() {
     FloatingSpaceContext
   );
 
+  const space = currentFloatingSpaces;
+
   const [zIndexes, setZIndexes] = useReducer(zIndexesReducer, {});
   const maxZ = Object.values(zIndexes).reduce(
     (acc, el) => Math.max(acc, el),
@@ -136,23 +138,33 @@ function FloatingRoomWindow() {
 
   const setStartingCoordinatesX = windowKey => {
     let windowOriginX = 20;
-    if (windowKey === "discord chat" || "proof your attendance") {
+    if (windowKey === "discord chat") {
       windowOriginX = width;
-    } else if (windowKey === "calendar") {
+    }else if (windowKey === "proof your attendance") {
+      windowOriginX = width;
+    }
+    
+    else if (windowKey === "calendar") {
       windowOriginX = width;
     } else if (windowKey === "youtube") {
+      windowOriginX = 20;
+    } else {
       windowOriginX = 20;
     }
     return windowOriginX;
   };
   const setStartingCoordinatesY = windowKey => {
     let windowOriginY = 40;
-    if (windowKey === "discord chat" || "proof your attendance") {
+    if (windowKey === "discord chat"){
       windowOriginY = 40;
-    } else if (windowKey === "calendar") {
+    } 
+    
+    else if (windowKey === "calendar") {
       windowOriginY = height + 10;
     } else if (windowKey === "youtube") {
       windowOriginY = height + 10;
+    } else {
+      windowOriginY = 40;
     }
     return windowOriginY;
   };
@@ -165,7 +177,21 @@ function FloatingRoomWindow() {
       bgColor = "#8e24aabb";
     } else if (windowKey === "cryptoeconomics-lab") {
       bgColor = "#4285f4bb";
-    } else {
+    } else if (windowKey === "discord chat" && space.indexOf('parallel-society') > -1) {
+      bgColor = "#ff0000bb";
+    } else if (windowKey === "discord chat" && space.indexOf('cryptoeconomics-lab') > -1) {
+      bgColor = "#4285f4bb";
+    } else if (windowKey === "discord chat" && space.indexOf('metatrack') > -1) {
+      bgColor = "#8e24aabb";
+    } else if (windowKey === "youtube" && space.indexOf('parallel-society') > -1) {
+      bgColor = "#ff0000bb";
+    } else if (windowKey === "youtube" && space.indexOf('cryptoeconomics-lab') > -1) {
+      bgColor = "#4285f4bb";
+    } else if (windowKey === "youtube" && space.indexOf('metatrack') > -1) {
+      bgColor = "#8e24aabb";
+    }
+    
+    else {
       bgColor = "#000000bb"
     }
     return bgColor;
