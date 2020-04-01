@@ -172,19 +172,19 @@ function FloatingRoomWindow() {
   const setFloatingwindowColor = windowKey => {
     let bgColor = "#000000bb";
     if (windowKey === "parallel-society") {
-      bgColor = "#ff0000bb";
+      bgColor = "#EEA800bb";
     } else if (windowKey === "metatrack") {
       bgColor = "#8e24aabb";
     } else if (windowKey === "cryptoeconomics-lab") {
       bgColor = "#4285f4bb";
     } else if (windowKey === "discord chat" && space.indexOf('parallel-society') > -1) {
-      bgColor = "#ff0000bb";
+      bgColor = "#EEA800bb";
     } else if (windowKey === "discord chat" && space.indexOf('cryptoeconomics-lab') > -1) {
       bgColor = "#4285f4bb";
     } else if (windowKey === "discord chat" && space.indexOf('metatrack') > -1) {
       bgColor = "#8e24aabb";
     } else if (windowKey === "youtube" && space.indexOf('parallel-society') > -1) {
-      bgColor = "#ff0000bb";
+      bgColor = "#EEA800bb";
     } else if (windowKey === "youtube" && space.indexOf('cryptoeconomics-lab') > -1) {
       bgColor = "#4285f4bb";
     } else if (windowKey === "youtube" && space.indexOf('metatrack') > -1) {
