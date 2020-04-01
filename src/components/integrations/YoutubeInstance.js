@@ -8,13 +8,13 @@ function YoutubeInstance({ roomData }) {
 
 	useEffect(() => {
 		if (space.indexOf('parallel-society') > -1) {
-			setYoutubeRoom('1didILpsp0s');
+			setYoutubeRoom('80mwsRuuTmM');
 		} else if (space.indexOf('cryptoeconomics-lab') > -1) {
-			setYoutubeRoom('hyCgHhglEUA');
+			setYoutubeRoom('2PP9qIVRDe0');
 		} else if (space.indexOf('metatrack') > -1) {
-			setYoutubeRoom('1didILpsp0s');
+			setYoutubeRoom('7LZbQZ0hcK4');
 		} else {
-			setYoutubeRoom('1didILpsp0s');
+			setYoutubeRoom('80mwsRuuTmM');
 		}
 		return console.log(youtubeRoom);
 	}, [space, youtubeRoom]);
