@@ -230,7 +230,7 @@ const Space = () => {
 						<div
 							id='c4'
 							className='circle row-6 c-left click-zone'
-							onClick={() => addFloatingSpace('proof your attendance')}></div>
+							onClick={() => addFloatingSpace('claim poap token')}></div>
 						<div
 							id='c5'
 							className='circle row-2 c-left click-zone'

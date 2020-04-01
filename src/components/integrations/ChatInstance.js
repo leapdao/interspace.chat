@@ -13,7 +13,7 @@ function ChatInstance() {
 			setDiscordRoom('692423341046366208');
 		} else if (space.indexOf('metatrack') > -1) {
 			setDiscordRoom('692423431777681488');
-		} else if (space.indexOf('proof your attendance') > -1) {
+		} else if (space.indexOf('claim poap token') > -1) {
 			setDiscordRoom('693135339249991701');
 		} else {
 			setDiscordRoom('692409996083855501');

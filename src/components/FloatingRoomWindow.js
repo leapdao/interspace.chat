@@ -83,7 +83,7 @@ function getFloatingRoomWindow(windowKey) {
     return <RoomInstance space={windowKey} />;
   } else if (windowKey === "discord chat") {
     return <ChatInstance />;
-  } else if (windowKey === "proof your attendance") {
+  } else if (windowKey === "claim poap token") {
     return <ChatInstance />;
   } else if (windowKey === "calendar") {
     return <CalendarInstance />;
@@ -130,6 +130,8 @@ function FloatingRoomWindow() {
         setZIndexes({ key: space, value: ++tempMax });
       }
     });
+
+    
   }, [currentFloatingSpaces, maxZ, zIndexes]);
 
   function setWindowFocus(windowKey) {
@@ -140,7 +142,7 @@ function FloatingRoomWindow() {
     let windowOriginX = 20;
     if (windowKey === "discord chat") {
       windowOriginX = width;
-    }else if (windowKey === "proof your attendance") {
+    }else if (windowKey === "claim poap token") {
       windowOriginX = width;
     }
     
@@ -171,6 +173,7 @@ function FloatingRoomWindow() {
 
   const setFloatingwindowColor = windowKey => {
     let bgColor = "#000000bb";
+    
     if (windowKey === "parallel-society") {
       bgColor = "#EEA800bb";
     } else if (windowKey === "metatrack") {
