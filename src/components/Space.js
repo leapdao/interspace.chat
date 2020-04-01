@@ -113,6 +113,20 @@ const Space = () => {
 		alert('This feature will only be available at the start of the conference');
 	};
 
+	const space = currentFloatingSpaces;
+	const poap = () => {
+		if (space.indexOf('claim poap token') > -1) {
+			window.alert(
+				'To claim your POAP token paste your wallet address in the #claim-poap-token discord channel and you will receive a PM with a link to redeem.'
+			);
+		} else {
+			window.alert(
+				'To claim your POAP token paste your wallet address in the #claim-poap-token discord channel and you will receive a PM with a link to redeem.'
+			);
+			addFloatingSpace('claim poap token');
+		}
+	};
+
 	return (
 		<SpaceSelector>
 			<BrowserView>
@@ -218,7 +232,7 @@ const Space = () => {
 						<div
 							id='c4'
 							className='circle row-6 c-left click-zone'
-							onClick={() => addFloatingSpace('claim poap token')}></div>
+							onClick={() => poap()}></div>
 						<div
 							id='c5'
 							className='circle row-2 c-left click-zone'
