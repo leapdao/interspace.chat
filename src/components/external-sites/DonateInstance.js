@@ -4,7 +4,7 @@ function DonateInstance() {
 	return (
 		<iframe
 			title='Donate to support NONCON 2020'
-			src='https://noncon.org/#donate'
+			src='https://noncon.org/#tickets'
 			style={{
 				height: `100%`,
 				width: `100%`,

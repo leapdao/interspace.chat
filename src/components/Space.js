@@ -257,7 +257,7 @@ const Space = () => {
 						<div
 							id='c9'
 							className='circle row-6 c-center click-zone'
-							onClick={() => addFloatingSpace('about')}></div>
+							onClick={() => addFloatingSpace('donate')}></div>
 						<div
 							id='c10'
 							className='circle row-5 c-center-left click-zone'
