@@ -1,9 +1,6 @@
-import React, { useState, useContext, useEffect, useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
-
-import { SpaceContext } from '../contexts/SpaceContext';
-import { FloatingSpaceContext } from '../contexts/FloatingSpaceContext';
 
 const Container = styled.div`
 	height: 100%;
@@ -13,14 +10,6 @@ const Container = styled.div`
 	justify-content: center;
 	align-content: center;
 	background: unset;
-`;
-
-const ChatButton = styled.button`
-	min-height: 20px;
-	max-width: 100px;
-	color: black;
-	align-self: flex-end;
-	margin-top: 15px;
 `;
 
 const EnterRoomName = styled.form``;
@@ -41,7 +30,6 @@ const ErrorStyled = styled.div`
 `;
 
 export default function LaunchNewRoom() {
-	const { currentSpace, setSpace } = useContext(SpaceContext);
 	const { register, handleSubmit, errors } = useForm();
 
 	const openInNewTab = url => {

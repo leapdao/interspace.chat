@@ -7,9 +7,6 @@ import { FloatingSpaceContext } from '../contexts/FloatingSpaceContext';
 
 import colors from '../utils/colors';
 
-import Room from './Room';
-import JitsiInstanceMobile from './integrations/JistiInstanceMobile';
-
 const Headline = styled.h6`
 	color: black;
 	font-weight: 500;
@@ -83,15 +80,6 @@ const CurrentSpace = styled.span`
 const MobileContainer = styled.div`
 	background: whitesmoke;
 	justify-content: center;
-`;
-
-const MobileSelectorContainer = styled.div`
-	background: whitesmoke;
-	box-shadow: inset 0px 0px 30px 30px rgba(0, 0, 0, 0);
-	justify-content: center;
-	display: grid;
-	grid-template-columns: auto auto auto;
-	grid-gap: 0.2rem;
 `;
 
 const StrongStyled = styled.strong`

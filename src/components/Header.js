@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { FloatingSpaceContext } from '../contexts/FloatingSpaceContext';
 
 import Credits from './Credits';
-import Help from './Help';
 
 import colors from '../utils/colors';
 
@@ -49,9 +48,7 @@ const Logolink = styled.a`
 `;
 
 const Header = () => {
-	const { currentFloatingSpaces, addFloatingSpace } = useContext(
-		FloatingSpaceContext
-	);
+	const { addFloatingSpace } = useContext(FloatingSpaceContext);
 
 	return (
 		<HeaderContainer>
