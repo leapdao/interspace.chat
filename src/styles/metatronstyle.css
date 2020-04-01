@@ -108,9 +108,9 @@ body {
     
     border-radius: 100%;
     display: block;
-    -webkit-transition: 3s ease-in;
-    -o-transition: 3s ease-in;
-    transition: 3s ease-in;
+    -webkit-transition: 1s ease-in;
+    -o-transition: 1s ease-in;
+    transition: 1s ease-in;
     position: relative;
     border: 1px solid rgb(255, 0, 0);
     z-index: 999; }
@@ -122,12 +122,14 @@ body {
       position: absolute;
       left: 0;
       top: 0;
-      -webkit-transition: 2s ease-in;
-      -o-transition: 2s ease-in;
-      transition: 2s ease-in;
+      -webkit-transition: 0.5s ease-in;
+      -o-transition: 0.5s ease-in;
+      transition: 0.5s ease-in;
+      /**
       -webkit-transition-delay: 0.3s;
       -o-transition-delay: 0.3s;
       transition-delay: 0.3s;
+      **/
       -webkit-transform: scale(0.1);
       -ms-transform: scale(0.1);
       transform: scale(0.1);
@@ -138,9 +140,9 @@ body {
       */
     }
     .m-grid-container .circle:hover {
-      -webkit-transition: 1s ease-out;
-      -o-transition: 1s ease-out;
-      transition: 1s ease-out;
+      -webkit-transition: 0.5s ease-out;
+      -o-transition: 0.5s ease-out;
+      transition: 0.5s ease-out;
       border: 1px solid white; }
       .m-grid-container .circle:hover:after {
         -webkit-transition: 0.2s ease-in;
