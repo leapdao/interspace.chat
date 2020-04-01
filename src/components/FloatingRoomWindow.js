@@ -146,13 +146,13 @@ function FloatingRoomWindow() {
     if (windowKey === "discord chat") {
       windowOriginX = width;
     }else if (windowKey === "claim poap token") {
-      windowOriginX = width;
-    }
-    
-    else if (windowKey === "calendar") {
+      windowOriginX = width / 2;
+    } else if (windowKey === "calendar") {
       windowOriginX = width;
     } else if (windowKey === "youtube") {
       windowOriginX = 20;
+    }else if (windowKey === "donate" || windowKey === "about" || windowKey === "help" || windowKey === "new room" || windowKey === "livestream" || windowKey === "loft.radio" || windowKey === "claim poap token") {
+      windowOriginX = width / 2 ;
     } else {
       windowOriginX = 20;
     }
@@ -168,6 +168,8 @@ function FloatingRoomWindow() {
       windowOriginY = height + 10;
     } else if (windowKey === "youtube") {
       windowOriginY = height + 10;
+    } else if (windowKey === "donate" || windowKey === "about" || windowKey === "help" || windowKey === "new room" || windowKey === "livestream" || "loft.radio" || "claim poap token" ){
+      windowOriginY = height / 2 ;
     } else {
       windowOriginY = 40;
     }
@@ -195,9 +197,13 @@ function FloatingRoomWindow() {
       bgColor = "#4285f4bb";
     } else if (windowKey === "youtube" && space.indexOf('metatrack') > -1) {
       bgColor = "#8e24aabb";
-    }
-    
-    else {
+    } else if (windowKey === "donate") {
+      bgColor = "#107a00bb";
+    } else if (windowKey === "livestream" || windowKey === "new room") {
+      bgColor = "#ff0000bb";
+    } else if (windowKey === "claim poap token") {
+      bgColor = "#F9879A";
+    } else {
       bgColor = "#000000bb"
     }
     return bgColor;
