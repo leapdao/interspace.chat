@@ -43,7 +43,7 @@ export default function LaunchNewRoom() {
 	};
 
 	const onSubmit = data => {
-		openInNewTab(`https://portal.interspace.chat/${data.roomName}`);
+		openInNewTab(`https://breakout.interspace.chat/${data.roomName}`);
 	};
 
 	return (
