@@ -177,34 +177,34 @@ function FloatingRoomWindow() {
   };
 
   const setFloatingwindowColor = windowKey => {
-    let bgColor = "#000000bb";
+    let bgColor = "#000000dd";
     
     if (windowKey === "parallel-society") {
-      bgColor = "#EEA800bb";
+      bgColor = "#EEA800dd";
     } else if (windowKey === "metatrack") {
-      bgColor = "#8e24aabb";
+      bgColor = "#8e24aadd";
     } else if (windowKey === "cryptoeconomics-lab") {
-      bgColor = "#4285f4bb";
+      bgColor = "#4285f4dd";
     } else if (windowKey === "discord chat" && space.indexOf('parallel-society') > -1) {
-      bgColor = "#EEA800bb";
+      bgColor = "#EEA800dd";
     } else if (windowKey === "discord chat" && space.indexOf('cryptoeconomics-lab') > -1) {
-      bgColor = "#4285f4bb";
+      bgColor = "#4285f4dd";
     } else if (windowKey === "discord chat" && space.indexOf('metatrack') > -1) {
-      bgColor = "#8e24aabb";
+      bgColor = "#8e24aadd";
     } else if (windowKey === "youtube" && space.indexOf('parallel-society') > -1) {
-      bgColor = "#EEA800bb";
+      bgColor = "#EEA800dd";
     } else if (windowKey === "youtube" && space.indexOf('cryptoeconomics-lab') > -1) {
-      bgColor = "#4285f4bb";
+      bgColor = "#4285f4dd";
     } else if (windowKey === "youtube" && space.indexOf('metatrack') > -1) {
-      bgColor = "#8e24aabb";
+      bgColor = "#8e24aadd";
     } else if (windowKey === "donate") {
-      bgColor = "#107a00bb";
+      bgColor = "#107a00dd";
     } else if (windowKey === "livestream" || windowKey === "new room") {
-      bgColor = "#ff0000bb";
+      bgColor = "#ff0000dd";
     } else if (windowKey === "claim poap token") {
-      bgColor = "#F9879A";
+      bgColor = "#F9879Add";
     } else {
-      bgColor = "#000000bb"
+      bgColor = "#000000dd"
     }
     return bgColor;
   };
