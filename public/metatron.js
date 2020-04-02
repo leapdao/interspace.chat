@@ -1,3 +1,5 @@
+window.addEventListener('DOMContentLoaded', function(event) {
+
 let Pattern = {
 	coordinates: [
 		'19,5', //0 top
@@ -34,11 +36,9 @@ let Pattern = {
 	}
 };
 
-window.addEventListener('DOMContentLoaded', function(event) {
 	let svg = document.getElementById('svg');
 	let center = document.getElementById('c12');
 	center.addEventListener('mouseover', () => addCircle(), false);
-});
 
 let lines = {
 	c0: {
@@ -91,16 +91,16 @@ let lines = {
 	}
 };
 
-for (let [line, value] of Object.entries(lines)) {
-	let circle = document.getElementById(line);
-	let path = Pattern.draw(Pattern.plot(value.shape), value.closed);
-	svg.appendChild(path);
-	setTimeout(function() {
-		path.remove();
-	}, 5000);
-	circle.addEventListener('mouseover', () => addShape(value), false);
-	circle.addEventListener('touchmove', () => addShape(value), false);
-}
+// for (let [line, value] of Object.entries(lines)) {
+	// let circle = document.getElementById(line);
+	// let path = Pattern.draw(Pattern.plot(value.shape), value.closed);
+	// svg.appendChild(path);
+	// setTimeout(function() {
+		// path.remove();
+	// }, 5000);
+	// circle.addEventListener('mouseover', () => addShape(value), false);
+	// circle.addEventListener('touchmove', () => addShape(value), false);
+// }
 
 function addShape(value) {
 	let newPath = Pattern.draw(Pattern.plot(value.shape), value.closed);
@@ -138,3 +138,4 @@ function addCircle() {
 		circle2.remove();
 	}, 5500);
 }
+});
