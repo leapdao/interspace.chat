@@ -9,7 +9,6 @@ const Container = styled.div`
 	justify-content: center;
 	align-content: center;
 	background: whitesmoke;
-	overflow-y: scroll;
 `;
 
 const ParagraphStyled = styled.p`
