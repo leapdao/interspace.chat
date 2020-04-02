@@ -43,6 +43,7 @@ const SpaceContainer = styled.div`
 const SpaceContent = styled.div`
   width: 100%;
   flex: 1;
+  cursor: auto;
   div {
     color: #ffffff;
   }
@@ -163,12 +164,11 @@ function FloatingRoomWindow() {
     if (windowKey === "discord chat"){
       windowOriginY = 40;
     } 
-    
     else if (windowKey === "calendar") {
       windowOriginY = height + 10;
     } else if (windowKey === "youtube") {
       windowOriginY = height + 10;
-    } else if (windowKey === "donate" || windowKey === "about" || windowKey === "help" || windowKey === "new room" || windowKey === "livestream" || "loft.radio" || "claim poap token" ){
+    } else if (windowKey === "donate" || windowKey === "about" || windowKey === "help" || windowKey === "new room" || windowKey === "livestream" || windowKey === "loft.radio" || windowKey === "claim poap token"){
       windowOriginY = height / 2 ;
     } else {
       windowOriginY = 40;
@@ -224,6 +224,7 @@ function FloatingRoomWindow() {
         zIndex: zIndexes[windowKey] || 1
       }}
       onDragStart={() => setWindowFocus(windowKey)}
+      cancel={".nodrag"}
     >
       <SpaceContainer>
         <SpaceHeader>
@@ -235,7 +236,7 @@ function FloatingRoomWindow() {
           </SpaceHeaderElement>
           <SpaceHeaderElement></SpaceHeaderElement>
         </SpaceHeader>
-        <SpaceContent>{getFloatingRoomWindow(windowKey)}</SpaceContent>
+        <SpaceContent className="nodrag">{getFloatingRoomWindow(windowKey)}</SpaceContent>
       </SpaceContainer>
     </Rnd>
   ));

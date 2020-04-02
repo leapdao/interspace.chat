@@ -9,24 +9,29 @@ const Container = styled.div`
 	flex-direction: column;
 	justify-content: center;
 	align-content: center;
-	background: unset;
+	background-color: whitesmoke;
 `;
 
-const EnterRoomName = styled.form``;
+const EnterRoomName = styled.form`
+	display: grid;
+	grid-template-rows: auto;
+	grid-row-gap: 0.5rem;
+`;
 
 const InputStyled = styled.input`
-	background-color: white;
+	max-width: 250px;
+`;
+
+const LabelStyled = styled.label`
+	padding: 1rem;
 	color: black;
-	z-index: 100;
 `;
 
-const LabelStyled = styled.div`
-	padding: 1rem;
-	color: whitesmoke;
-`;
+const Inner = styled.div``;
 
-const ErrorStyled = styled.div`
+const ErrorStyled = styled.span`
 	padding: 1rem;
+	color: black;
 `;
 
 export default function LaunchNewRoom() {
@@ -47,13 +52,15 @@ export default function LaunchNewRoom() {
 				<LabelStyled htmlfor='roomName'>
 					What shall your room be called?
 				</LabelStyled>
-				<InputStyled
-					name='roomName'
-					type='text'
-					placeholder='Infinite Jest'
-					ref={register({ required: true })}
-				/>
-				<InputStyled type='submit' />
+				<Inner>
+					<InputStyled
+						name='roomName'
+						type='text'
+						placeholder='Infinite Jest'
+						ref={register({ required: true })}
+					/>
+					<InputStyled type='submit' />
+				</Inner>
 				{errors.roomName && <ErrorStyled>A room name is required.</ErrorStyled>}
 			</EnterRoomName>
 		</Container>
