@@ -1,12 +1,9 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-
-import { FloatingSpaceContext } from '../contexts/FloatingSpaceContext';
 
 import Credits from './Credits';
 
-import colors from '../utils/colors';
-
+/**
 const HelpStyled = styled.button`
 	text-align: left;
 	color: black;
@@ -18,6 +15,7 @@ const HelpStyled = styled.button`
 		background-color: ${colors.highlight};
 	}
 `;
+ */
 
 const HeaderContainer = styled.div`
 	position: fixed;
@@ -48,14 +46,12 @@ const Logolink = styled.a`
 `;
 
 const Header = () => {
-	const { addFloatingSpace } = useContext(FloatingSpaceContext);
-
 	return (
 		<HeaderContainer>
 			<Logolink href='/'>
 				<Logotext>noncon.interspace.chat</Logotext>
 			</Logolink>
-			<HelpStyled onClick={() => addFloatingSpace('help')}>Help</HelpStyled>
+			{/**<HelpStyled onClick={() => addFloatingSpace('help')}>Help</HelpStyled>**/}
 			<Credits />
 		</HeaderContainer>
 	);
