@@ -9,10 +9,12 @@ const Container = styled.div`
 	justify-content: center;
 	align-content: center;
 	background: whitesmoke;
+	overflow-y: scroll;
 `;
 
 const ParagraphStyled = styled.p`
-	width: 50%;
+	max-width: 80%;
+	line-height: 1.5rem;
 	margin: 0 auto;
 	text-align: justify;
 	padding: 1rem;
