@@ -117,11 +117,11 @@ const Space = () => {
 	const poap = () => {
 		if (space.indexOf('claim poap token') > -1) {
 			window.alert(
-				'To claim your POAP token paste your wallet address in the #claim-poap-token discord channel and you will receive a PM with a link to redeem.'
+				'To claim your POAP token paste your wallet address along with your role(s) at noncon (speaker, organizer, volunteer, attendee) in the #claim-poap-token discord channel and you will receive a PM with a link to redeem.'
 			);
 		} else {
 			window.alert(
-				'To claim your POAP token paste your wallet address in the #claim-poap-token discord channel and you will receive a PM with a link to redeem.'
+				'To claim your POAP token paste your wallet address along with your role(s) at noncon (speaker, organizer, volunteer, attendee) in the #claim-poap-token discord channel and you will receive a PM with a link to redeem.'
 			);
 			addFloatingSpace('claim poap token');
 		}
@@ -216,7 +216,7 @@ const Space = () => {
 						<div
 							id='c1'
 							className='circle row-2 c-right click-zone'
-							onClick={() => addFloatingSpace('metatrack')}></div>
+							onClick={() => featureNotHereYet()}></div>
 						<div
 							id='c2'
 							className='circle row-6 c-right click-zone'
@@ -267,7 +267,7 @@ const Space = () => {
 						<div
 							id='c11'
 							className='circle row-3 c-center-left click-zone'
-							onClick={() => featureNotHereYet()}></div>
+							onClick={() => addFloatingSpace('livestream')}></div>
 
 						<div
 							id='c12'

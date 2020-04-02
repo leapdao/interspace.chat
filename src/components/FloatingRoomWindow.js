@@ -10,10 +10,12 @@ import ChatInstance from "./integrations/ChatInstance";
 import CalendarInstance from "./integrations/CalendarInstance";
 import HubInstance from "./integrations/HubInstance"
 import RoomInstance from "./integrations/RoomInstance";
+import LivestreamLinkInstance from "./integrations/LivestreamLinksInstance"
 
 import AboutInstance from "./external-sites/AboutInstance"
 import DonateInstance from "./external-sites/DonateInstance"
 import HelpInstance from "./external-sites/HelpInstance"
+
 
 import { RoomNames } from "../utils/constants";
 import LaunchNewRoom from "./LaunchNewRoom";
@@ -101,8 +103,9 @@ function getFloatingRoomWindow(windowKey) {
     return <DonateInstance />;
   } else if (windowKey === "help") {
     return <HelpInstance />;
-  }
-   else if (windowKey === null) {
+  } else if (windowKey === "livestream") {
+    return <LivestreamLinkInstance />;
+  } else if (windowKey === null) {
     return null;
   }
 }
