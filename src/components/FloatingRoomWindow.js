@@ -95,7 +95,7 @@ function getFloatingRoomWindow(windowKey) {
     return <CalendarInstance />;
   } else if (windowKey === "youtube") {
     return <YoutubeInstance />;
-  } else if (windowKey === "hub") {
+  } else if (windowKey === "hubs") {
     return <HubInstance />;
   } else if (windowKey === "about") {
     return <AboutInstance />;

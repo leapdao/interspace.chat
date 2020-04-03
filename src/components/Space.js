@@ -246,11 +246,7 @@ const Space = () => {
 						<div
 							id='c7'
 							className='circle row-3 c-center-right click-zone'
-							onClick={() =>
-								openInNewTab(
-									'https://hubs.mozilla.com/nKCuNrg/house-of-defiance'
-								)
-							}></div>
+							onClick={() => addFloatingSpace('hubs')}></div>
 
 						<div
 							id='c8'
