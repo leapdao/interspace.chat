@@ -308,13 +308,14 @@ const Space = () => {
 							You can watch our livestream and maybe hack your way into it, but
 							there is no official support.
 						</p>
+						<p>NONCON2020 livestream at:</p>
 						<a href='https://www.youtube.com/channel/UCsF67FGXtv4lplQyQSPizbQ'>
-							NONCON2020 live at Paralelle Polis Vienna
+							Paralelle Polis Vienna Youtube channel
 						</a>
 
-            {/**<a href="https://portal.interspace.chat">or open a new room</a>**/}
-          </Descripton>
-          {/**
+						{/**<a href="https://portal.interspace.chat">or open a new room</a>**/}
+					</Descripton>
+					{/**
 					<MobileSelectorContainer>
 						
             <Room roomName="capsule1" />
