@@ -103,7 +103,7 @@ const Space = () => {
     }
   }
 
-  const openInNewTab = url => {
+  const openInNewTab = (url) => {
     let win = window.open(url, "_blank");
     win.focus();
   };
@@ -286,7 +286,7 @@ const Space = () => {
           <Descripton>
             <p> Click below to enter the videochat</p>
 
-            <a href="https://portal.interspace.chat">or open a new room</a>
+            <a href="https://breakout.interspace.chat">or open a new room</a>
           </Descripton>
           <MobileSelectorContainer>
             <Room roomName="capsule1" />
