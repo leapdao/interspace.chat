@@ -291,6 +291,9 @@ const Space = () => {
 							You can watch our livestream and maybe hack your way into it, but
 							there is no official support.
 						</p>
+						<a href='https://www.youtube.com/channel/UCsF67FGXtv4lplQyQSPizbQ'>
+							NONCON2020 live at Paralelle Polis Vienna
+						</a>
 
 						{/**<a href="https://portal.interspace.chat">or open a new room</a>**/}
 					</Descripton>
