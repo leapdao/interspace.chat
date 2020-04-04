@@ -23,38 +23,49 @@ const ParagraphStyled = styled.div`
 `;
 
 const LinkStyled = styled.a`
-    color: red;
+    color: #FC05F4;
 }`;
 
-function LivestreamLinksInstance() {
+function RaffleInstance() {
   return (
     <Container>
-      <p>Direct links to the youtube streams of our conference tracks:</p>
+      <p>
+        Follow one of the links below to Mintbase and buy a tokens to enter the
+        raffles:
+      </p>
       <ParagraphStyled>
         <LinkStyled
-          href="https://youtu.be/yRgiU9mQEuM"
+          href="https://mintbase.io/pez-dispenser/0x0b23ad11e92fdf87eb5c9b0f24b9860f9c4689ee/OjZ2GaixwXmjOwM6Tgsw"
           target="_blank"
           rel="noopener noreferrer"
         >
-          parallel-society
+          Shift Crypto Wallet Raffle NFT
         </LinkStyled>{" "}
+        <p>
+          This Mintbase NFT represents a raffle ticket offering the chance to
+          win 1 of 6 Shift Crypto Wallets.
+        </p>
         <LinkStyled
-          href="https://youtu.be/GpwK_lHYv3Q"
+          href="https://mintbase.io/pez-dispenser/0x0b23ad11e92fdf87eb5c9b0f24b9860f9c4689ee/SknAvIIUGxlvoU0iJ7XG"
           target="_blank"
           rel="noopener noreferrer"
         >
-          cryptoeconomics-lab
+          Status Keycard raffle NFT
         </LinkStyled>{" "}
+        <p>
+          This Mintbase NFT represents a raffle ticket offering the chance to
+          win 1 of 10 Status Keycards.
+        </p>
         <LinkStyled
-          href="https://youtu.be/97ieQ_tq98Q"
+          href="https://noncon.org/#donate"
           target="_blank"
           rel="noopener noreferrer"
         >
-          metatrack (opens Saturday, 4th April 2020)
-        </LinkStyled>{" "}
+          See the full terms for the raffle on noncon.org
+        </LinkStyled>
       </ParagraphStyled>
     </Container>
   );
 }
 
-export default LivestreamLinksInstance;
+export default RaffleInstance;

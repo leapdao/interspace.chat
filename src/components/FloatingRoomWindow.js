@@ -8,14 +8,14 @@ import LoftRadioInstance from "./integrations/LoftRadioInstance";
 import YoutubeInstance from "./integrations/YoutubeInstance";
 import ChatInstance from "./integrations/ChatInstance";
 import CalendarInstance from "./integrations/CalendarInstance";
-import HubInstance from "./integrations/HubInstance"
+import HubInstance from "./integrations/HubInstance";
 import RoomInstance from "./integrations/RoomInstance";
-import LivestreamLinkInstance from "./integrations/LivestreamLinksInstance"
+import LivestreamLinkInstance from "./integrations/LivestreamLinksInstance";
 
-import AboutInstance from "./external-sites/AboutInstance"
-import DonateInstance from "./external-sites/DonateInstance"
-import HelpInstance from "./external-sites/HelpInstance"
-
+import AboutInstance from "./external-sites/AboutInstance";
+import DonateInstance from "./external-sites/DonateInstance";
+import RaffleInstance from "./external-sites/RaffleInstance";
+import HelpInstance from "./external-sites/HelpInstance";
 
 import { RoomNames } from "../utils/constants";
 import LaunchNewRoom from "./LaunchNewRoom";
@@ -61,8 +61,8 @@ const spaceContainerStyle = {
   boxShadow:
     "0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)",
   "&:active iframe": {
-    pointerEvents: "none"
-  }
+    pointerEvents: "none",
+  },
 };
 
 const Closer = styled.div`
@@ -99,6 +99,8 @@ function getFloatingRoomWindow(windowKey) {
     return <HubInstance />;
   } else if (windowKey === "about") {
     return <AboutInstance />;
+  } else if (windowKey === "raffle") {
+    return <RaffleInstance />;
   } else if (windowKey === "donate") {
     return <DonateInstance />;
   } else if (windowKey === "help") {
@@ -113,7 +115,7 @@ function getFloatingRoomWindow(windowKey) {
 function zIndexesReducer(state, action) {
   return {
     ...state,
-    [action.key]: action.value
+    [action.key]: action.value,
   };
 }
 
@@ -132,73 +134,101 @@ function FloatingRoomWindow() {
 
   useEffect(() => {
     let tempMax = maxZ;
-    currentFloatingSpaces.forEach(space => {
+    currentFloatingSpaces.forEach((space) => {
       if (!zIndexes[space]) {
         setZIndexes({ key: space, value: ++tempMax });
       }
     });
-
-    
   }, [currentFloatingSpaces, maxZ, zIndexes]);
 
   function setWindowFocus(windowKey) {
     setZIndexes({ key: windowKey, value: maxZ + 1 });
   }
 
-  const setStartingCoordinatesX = windowKey => {
+  const setStartingCoordinatesX = (windowKey) => {
     let windowOriginX = 20;
     if (windowKey === "discord chat") {
       windowOriginX = width;
-    }else if (windowKey === "claim poap token") {
+    } else if (windowKey === "claim poap token") {
       windowOriginX = width / 2;
     } else if (windowKey === "calendar") {
       windowOriginX = width;
     } else if (windowKey === "youtube") {
       windowOriginX = 20;
-    }else if (windowKey === "donate" || windowKey === "about" || windowKey === "help" || windowKey === "new room" || windowKey === "livestream" || windowKey === "loft.radio" || windowKey === "claim poap token") {
-      windowOriginX = width / 2 ;
+    } else if (
+      windowKey === "donate" ||
+      windowKey === "about" ||
+      windowKey === "help" ||
+      windowKey === "new room" ||
+      windowKey === "livestream" ||
+      windowKey === "loft.radio" ||
+      windowKey === "claim poap token"
+    ) {
+      windowOriginX = width / 2;
     } else {
       windowOriginX = 20;
     }
     return windowOriginX;
   };
-  const setStartingCoordinatesY = windowKey => {
+  const setStartingCoordinatesY = (windowKey) => {
     let windowOriginY = 40;
-    if (windowKey === "discord chat"){
+    if (windowKey === "discord chat") {
       windowOriginY = 40;
-    } 
-    else if (windowKey === "calendar") {
+    } else if (windowKey === "calendar") {
       windowOriginY = height + 10;
     } else if (windowKey === "youtube") {
       windowOriginY = height + 10;
-    } else if (windowKey === "donate" || windowKey === "about" || windowKey === "help" || windowKey === "new room" || windowKey === "livestream" || windowKey === "loft.radio" || windowKey === "claim poap token"){
-      windowOriginY = height / 2 ;
+    } else if (
+      windowKey === "donate" ||
+      windowKey === "about" ||
+      windowKey === "help" ||
+      windowKey === "new room" ||
+      windowKey === "livestream" ||
+      windowKey === "loft.radio" ||
+      windowKey === "claim poap token"
+    ) {
+      windowOriginY = height / 2;
     } else {
       windowOriginY = 40;
     }
     return windowOriginY;
   };
 
-  const setFloatingwindowColor = windowKey => {
+  const setFloatingwindowColor = (windowKey) => {
     let bgColor = "#000000dd";
-    
+
     if (windowKey === "parallel-society") {
       bgColor = "#EEA800dd";
     } else if (windowKey === "metatrack") {
       bgColor = "#8e24aadd";
     } else if (windowKey === "cryptoeconomics-lab") {
       bgColor = "#4285f4dd";
-    } else if (windowKey === "discord chat" && space.indexOf('parallel-society') > -1) {
+    } else if (
+      windowKey === "discord chat" &&
+      space.indexOf("parallel-society") > -1
+    ) {
       bgColor = "#EEA800dd";
-    } else if (windowKey === "discord chat" && space.indexOf('cryptoeconomics-lab') > -1) {
+    } else if (
+      windowKey === "discord chat" &&
+      space.indexOf("cryptoeconomics-lab") > -1
+    ) {
       bgColor = "#4285f4dd";
-    } else if (windowKey === "discord chat" && space.indexOf('metatrack') > -1) {
+    } else if (
+      windowKey === "discord chat" &&
+      space.indexOf("metatrack") > -1
+    ) {
       bgColor = "#8e24aadd";
-    } else if (windowKey === "youtube" && space.indexOf('parallel-society') > -1) {
+    } else if (
+      windowKey === "youtube" &&
+      space.indexOf("parallel-society") > -1
+    ) {
       bgColor = "#EEA800dd";
-    } else if (windowKey === "youtube" && space.indexOf('cryptoeconomics-lab') > -1) {
+    } else if (
+      windowKey === "youtube" &&
+      space.indexOf("cryptoeconomics-lab") > -1
+    ) {
       bgColor = "#4285f4dd";
-    } else if (windowKey === "youtube" && space.indexOf('metatrack') > -1) {
+    } else if (windowKey === "youtube" && space.indexOf("metatrack") > -1) {
       bgColor = "#8e24aadd";
     } else if (windowKey === "donate") {
       bgColor = "#107a00dd";
@@ -207,7 +237,7 @@ function FloatingRoomWindow() {
     } else if (windowKey === "claim poap token") {
       bgColor = "#F9879Add";
     } else {
-      bgColor = "#000000dd"
+      bgColor = "#000000dd";
     }
     return bgColor;
   };
@@ -219,12 +249,12 @@ function FloatingRoomWindow() {
         x: setStartingCoordinatesX(windowKey),
         y: setStartingCoordinatesY(windowKey),
         width: width - 20,
-        height: height - 20
+        height: height - 20,
       }}
       style={{
         ...spaceContainerStyle,
         backgroundColor: setFloatingwindowColor(windowKey),
-        zIndex: zIndexes[windowKey] || 1
+        zIndex: zIndexes[windowKey] || 1,
       }}
       onDragStart={() => setWindowFocus(windowKey)}
       cancel={".nodrag"}
@@ -239,7 +269,9 @@ function FloatingRoomWindow() {
           </SpaceHeaderElement>
           <SpaceHeaderElement></SpaceHeaderElement>
         </SpaceHeader>
-        <SpaceContent className="nodrag">{getFloatingRoomWindow(windowKey)}</SpaceContent>
+        <SpaceContent className="nodrag">
+          {getFloatingRoomWindow(windowKey)}
+        </SpaceContent>
       </SpaceContainer>
     </Rnd>
   ));

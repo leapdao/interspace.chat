@@ -223,12 +223,12 @@ body {
 }
 
 #c7 {
-  background: url(./img/noncon-portals/vrhub.png);
+  background: url(./img/noncon-portals/raffle.png);
   background-size: contain;
 }
 
 #c7:hover{ 
-  background: url(./img/noncon-portals/vrhub-hover.png);
+  background: url(./img/noncon-portals/raffle-hover.png);
   background-size: contain;
 }
 
