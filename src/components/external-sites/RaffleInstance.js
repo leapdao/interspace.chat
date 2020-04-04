@@ -57,7 +57,7 @@ function RaffleInstance() {
           win 1 of 10 Status Keycards.
         </p>
         <LinkStyled
-          href="https://noncon.org/#donate"
+          href="https://noncon.org/donate"
           target="_blank"
           rel="noopener noreferrer"
         >
