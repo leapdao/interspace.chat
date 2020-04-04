@@ -1,5 +1,5 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react"
+import styled from "styled-components"
 
 const Container = styled.div`
 	height: 100%;
@@ -9,7 +9,7 @@ const Container = styled.div`
 	justify-content: center;
 	align-content: center;
 	background: whitesmoke;
-`;
+`
 
 const ParagraphStyled = styled.div`
 	display: grid;
@@ -20,11 +20,11 @@ const ParagraphStyled = styled.div`
 	padding: 1rem;
 	justify-items: space-between;
 	grid-gap: 1rem;
-`;
+`
 
 const LinkStyled = styled.a`
     
-}`;
+}`
 
 function LivestreamLinksInstance() {
 	return (
@@ -32,26 +32,26 @@ function LivestreamLinksInstance() {
 			<p>Direct links to the youtube streams of our conference tracks:</p>
 			<ParagraphStyled>
 				<LinkStyled
-					href='https://youtu.be/2oSUnUpqg3E'
-					target='_blank'
-					rel='noopener noreferrer'>
+					href="https://youtu.be/yRgiU9mQEuM"
+					target="_blank"
+					rel="noopener noreferrer">
 					parallel-society
-				</LinkStyled>{' '}
+				</LinkStyled>{" "}
 				<LinkStyled
-					href='https://youtu.be/16KSQjvVz7k'
-					target='_blank'
-					rel='noopener noreferrer'>
+					href="https://youtu.be/GpwK_lHYv3Q"
+					target="_blank"
+					rel="noopener noreferrer">
 					cryptoeconomics-lab
-				</LinkStyled>{' '}
+				</LinkStyled>{" "}
 				<LinkStyled
-					href='https://youtu.be/97ieQ_tq98Q'
-					target='_blank'
-					rel='noopener noreferrer'>
-					metatrack
-				</LinkStyled>{' '}
+					href="https://youtu.be/97ieQ_tq98Q"
+					target="_blank"
+					rel="noopener noreferrer">
+					metatrack (opens Saturday, 4th April 2020)
+				</LinkStyled>{" "}
 			</ParagraphStyled>
 		</Container>
-	);
+	)
 }
 
-export default LivestreamLinksInstance;
+export default LivestreamLinksInstance
