@@ -1,30 +1,30 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
 const Container = styled.div`
-	height: 100%;
-	width: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-content: center;
-	background: whitesmoke;
-`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  background: whitesmoke;
+`;
 
 const ParagraphStyled = styled.div`
-	display: grid;
-	grid-template-rows: auto auto auto;
-	max-width: 80%;
-	line-height: 1.5rem;
-	margin: 0 auto;
-	padding: 1rem;
-	justify-items: space-between;
-	grid-gap: 1rem;
-`
+  display: grid;
+  grid-template-rows: auto auto auto;
+  max-width: 80%;
+  line-height: 1.5rem;
+  margin: 0 auto;
+  padding: 1rem;
+  justify-items: space-between;
+  grid-gap: 1rem;
+`;
 
 const LinkStyled = styled.a`
-    
-}`
+    color: red;
+}`;
 
 function LivestreamLinksInstance() {
 	return (
@@ -55,4 +55,4 @@ function LivestreamLinksInstance() {
 	)
 }
 
-export default LivestreamLinksInstance
+export default LivestreamLinksInstance;
