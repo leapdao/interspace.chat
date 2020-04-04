@@ -104,7 +104,7 @@ const Space = () => {
 		}
 	}
 
-	const openInNewTab = url => {
+	const openInNewTab = (url) => {
 		let win = window.open(url, "_blank")
 		win.focus()
 	}
@@ -236,7 +236,7 @@ const Space = () => {
 						<div
 							id="c5"
 							className="circle row-2 c-left click-zone"
-							onClick={() => addFloatingSpace("cryptoeconomics-lab")}></div>
+							onClick={() => featureNotHereYet()}></div>
 
 						<div
 							id="c6"
