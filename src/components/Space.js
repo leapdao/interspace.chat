@@ -1,11 +1,10 @@
 import React, { Fragment, useContext } from "react";
-import styled from "styled-components";
-
+import styled from "@emotion/styled";
 import { BrowserView, MobileView } from "react-device-detect";
 
 import { FloatingSpaceContext } from "../contexts/FloatingSpaceContext";
 
-import colors from "../utils/colors";
+import SvgImagemap from "./Imagemap";
 
 const Headline = styled.h6`
   color: black;
@@ -15,8 +14,8 @@ const Headline = styled.h6`
 
   a {
     font-weight: 100;
-    color: black;
-    background-color: ${colors.highlight};
+    color: ${(props) => props.theme.body};
+    background-color: ${(props) => props.theme.background};
     text-decoration: underline;
   }
 
@@ -37,14 +36,15 @@ const SpaceSelector = styled.nav`
 `;
 
 const SpaceInfo = styled.div`
-  text-align: center;
+  text-align: right;
   padding-top: 1rem;
+  padding-right: 1rem;
   margin: 0 auto;
   font-size: 1rem;
   font-weight: 500;
   z-index: 100;
   div {
-    color: red;
+    color: ${(props) => props.theme.body};
   }
 `;
 
@@ -74,7 +74,7 @@ const Descripton = styled.div`
 `;
 
 const CurrentSpace = styled.span`
-  color: #ff0000;
+  color: ${(props) => props.theme.highlight};
 `;
 
 const MobileContainer = styled.div`
@@ -86,10 +86,20 @@ const StrongStyled = styled.strong`
   font-weight: 700;
 `;
 
+const MapContainer = styled("div")`
+  display: grid;
+  min-height: 90vh;
+  justify-content: center;
+  align-content: center;
+  margin: 0;
+`;
+
 const Space = () => {
   const { currentFloatingSpaces, addFloatingSpace } = useContext(
     FloatingSpaceContext
   );
+
+  const space = currentFloatingSpaces;
 
   let displayedJoinedSpaces;
   if (currentFloatingSpaces.length > 0) {
@@ -113,7 +123,6 @@ const Space = () => {
     alert("This feature is currently not available");
   };
 
-  const space = currentFloatingSpaces;
   const poap = () => {
     if (space.indexOf("claim poap token") > -1) {
       window.alert(
@@ -127,23 +136,27 @@ const Space = () => {
     }
   };
 
-	return (
-		<SpaceSelector>
-			<BrowserView>
-				<span>
-					<SpaceInfo>
-						{displayedJoinedSpaces ? (
-							<Fragment>
-								You're in the{" "}
-								<CurrentSpace>{displayedJoinedSpaces}</CurrentSpace>!
-							</Fragment>
-						) : (
-							<Fragment>
-								<div>Click on a portal</div>
-							</Fragment>
-						)}
-					</SpaceInfo>
-				</span>
+  return (
+    <SpaceSelector>
+      <BrowserView>
+        <span>
+          <SpaceInfo>
+            {displayedJoinedSpaces ? (
+              <Fragment>
+                You're in the{" "}
+                <CurrentSpace>{displayedJoinedSpaces}</CurrentSpace>!
+              </Fragment>
+            ) : (
+              <Fragment>
+                <div>Click on a portal</div>
+              </Fragment>
+            )}
+          </SpaceInfo>
+        </span>
+        <MapContainer>
+          <SvgImagemap />
+        </MapContainer>
+        {/** 
 				<div>
 					<div className="m-grid-container">
 						<svg
@@ -277,6 +290,7 @@ const Space = () => {
             ></div>
           </div>
         </div>
+            */}
       </BrowserView>
       <MobileView>
         <MobileContainer>

@@ -1,8 +1,6 @@
 import React from "react";
-import styled from "styled-components";
+import styled from "@emotion/styled";
 import Collapsible from "react-collapsible";
-
-import colors from "../utils/colors";
 
 import Titanembeds from "../img/titanembeds.png";
 import Jitsilogo from "../img/jitsi.png";
@@ -13,12 +11,12 @@ const CreditsStyled = styled.nav`
   text-align: left;
 
   .Collapsible__trigger {
-    color: black;
-    background-color: whitesmoke;
+    color: ${(props) => props.theme.color};
+    background-color: ${(props) => props.theme.background};
     cursor: pointer;
     padding: 0.2rem;
     :hover {
-      background-color: ${colors.highlight};
+      background-color: ${(props) => props.theme.highlight};
     }
   }
   .Collapsible__contentOuter {
@@ -33,7 +31,7 @@ const CreditsStyled = styled.nav`
     padding: 0.5rem;
 
     a {
-      color: ${colors.highlight};
+      color: ${(props) => props.theme.highlight};}
     }
   }
 `;
@@ -59,13 +57,13 @@ const Credits = () => {
         <p>Art used:</p>
         <ul>
           <StyledListItem>
-            "Metatron Menu" forked from{" "}
+            "ETH Turin" graphics by{" "}
             <a
-              href="https://github.com/MGrudule/metatron"
+              href="https://twitter.com/lililashka"
               target="_blank"
               rel="noopener noreferrer"
             >
-              @MGrudule
+              @Lili ✰ ツ
             </a>{" "}
           </StyledListItem>
         </ul>
@@ -134,7 +132,7 @@ const Credits = () => {
           <StyledListItem>
             or directly to{" "}
             <a
-              href="https://etherscan.io/address/noncon.eth"
+              href="https://etherscan.io/address/support.interspacechat.eth"
               target="_blank"
               rel="noopener noreferrer"
             >

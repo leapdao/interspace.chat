@@ -3,6 +3,10 @@
   "version": "0.3.0",
   "private": true,
   "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "emotion": "^10.0.27",
+    "emotion-theming": "^10.0.27",
     "formik": "^2.1.4",
     "lib-jitsi-meet": "^1.0.6",
     "react": "^16.13.1",
@@ -17,6 +21,8 @@
     "webfontloader": "^1.6.28"
   },
   "scripts": {
+    "svg-to-jsx": "svgr svgr/imagemap.svg --out-dir src/components/ --svgo-config svgr/svgo.json",
+    "svg-to-jsx-replace-with-props": "svgr < svgr/imagemap.svg > src/components/Imagemap.js --svgo-config svgr/svgo.json --replace-attr-values 'XXXXXXX={props.xxxxxx}'",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -36,5 +42,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@svgr/cli": "^5.3.1"
   }
 }

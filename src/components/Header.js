@@ -1,60 +1,82 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useContext } from "react";
+import styled from "@emotion/styled";
+import { FloatingSpaceContext } from "../contexts/FloatingSpaceContext";
 
-import Credits from './Credits';
+import { useTheme } from "../contexts/ThemeContext";
+import Credits from "./Credits";
 
-/**
 const HelpStyled = styled.button`
-	text-align: left;
-	color: black;
-	background-color: whitesmoke;
-	cursor: pointer;
-	padding: 0.2rem;
-	border: none;
-	:hover {
-		background-color: ${colors.highlight};
-	}
+  display: block;
+  padding: 0.2rem;
+  white-space: nowrap;
+  max-width: 50px;
+  text-align: left;
+  color: ${(props) => props.theme.body};
+  background-color: ${(props) => props.theme.background};
+  cursor: pointer;
+  padding: 0.2rem;
+  border: none;
+  :hover {
+    background-color: ${(props) => props.theme.highlight};
+  }
 `;
- */
 
 const HeaderContainer = styled.div`
-	position: fixed;
-	top: 0px;
-	left: 20px;
-	display: grid;
-	grid-gap: 0.2rem;
-	grid-template-rows: auto auto;
-	padding: 1rem;
-	justify-items: start;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  left: 20px;
+  display: grid;
+  grid-gap: 0.2rem;
+  grid-template-rows: repeat(2, auto);
+  padding: 1rem;
+`;
 
-	:hover {
-		opacity: 1;
-	}
+const LogoSpan = styled.span`
+  display: grid;
+  grid-template-columns: auto auto;
 `;
 
 const Logotext = styled.h2`
-	align-self: flex-end;
-	margin: 0;
-	font-size: 18px;
+  margin: 0;
+  font-size: 18px;
 `;
 
 const Logolink = styled.a`
-	display: flex;
-	width: 100px;
-	text-decoration-line: none;
-	padding-bottom: 2rem;
+  width: 100px;
+  text-decoration-line: none;
+  padding-bottom: 2rem;
+`;
+
+const LightSwitch = styled.button`
+  position: fixed;
+  top: 95vh;
+  right: 0px;
+  justify-self: start;
+  align-self: flex-start;
+  border: 0px;
+  background: unset;
+  cursor: pointer;
+  font-size: 26px;
 `;
 
 const Header = () => {
-	return (
-		<HeaderContainer>
-			<Logolink href='/'>
-				<Logotext>noncon.interspace.chat</Logotext>
-			</Logolink>
-			{/**<HelpStyled onClick={() => addFloatingSpace('help')}>Help</HelpStyled>**/}
-			<Credits />
-		</HeaderContainer>
-	);
+  const { addFloatingSpace } = useContext(FloatingSpaceContext);
+  const themeState = useTheme();
+  return (
+    <HeaderContainer>
+      <LogoSpan>
+        <Logolink href="/">
+          <Logotext>ethturin.interspace.chat</Logotext>
+        </Logolink>
+        <LightSwitch onClick={() => themeState.toggle()}>
+          {themeState.dark ? "🌞" : "🌜"}
+        </LightSwitch>
+      </LogoSpan>
+      <HelpStyled onClick={() => addFloatingSpace("help")}>Help</HelpStyled>
+      <Credits />
+    </HeaderContainer>
+  );
 };
 
 export default Header;

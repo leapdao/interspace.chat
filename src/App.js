@@ -1,30 +1,56 @@
 import React from "react";
+import styled from "@emotion/styled";
+import { Global, css } from "@emotion/core";
 import { BrowserView } from "react-device-detect";
-import "./styles/metatronstyle.css";
-import "./App.css";
+
 import Space from "./components/Space";
 import FloatingRoomWindow from "./components/FloatingRoomWindow";
 import RootContextProvider from "./contexts/RootContext";
-import HouseContext from "./contexts/HouseContext";
 import SpaceContext from "./contexts/SpaceContext";
 
 import Header from "./components/Header";
 
+const Wrapper = styled("div")`
+  color: ${(props) => props.theme.body};
+  background-color: ${(props) => props.theme.background};
+  width: 100vw;
+  height: 100vh;
+
+  a {
+    color: ${(props) => props.theme.highlight};
+  }
+`;
+
 function App() {
   return (
-    <div className="App">
+    <Wrapper className="App">
       <RootContextProvider>
-        <HouseContext>
-          <SpaceContext>
-            <BrowserView>
-              <Header />
-            </BrowserView>
-            <Space />
-          </SpaceContext>
-        </HouseContext>
+        <SpaceContext>
+          <BrowserView>
+            <Header />
+          </BrowserView>
+          <Space />
+        </SpaceContext>
+        <Global
+          styles={css`
+            * {
+              margin: 0;
+              font-family: "Helvetica Neue", Arial, sans-serif;
+              font-weight: 300;
+              font-size: 14px;
+            }
+            .click-zone {
+              transition: 0.01s cubic-bezier(0.2, 0.8, 0.2, 1);
+              & :hover {
+                text-shadow: 10px 10px 10px black;
+                cursor: pointer;
+              }
+            }
+          `}
+        />
         <FloatingRoomWindow />
       </RootContextProvider>
-    </div>
+    </Wrapper>
   );
 }
 
