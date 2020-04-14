@@ -5,6 +5,7 @@ import { BrowserView, MobileView } from "react-device-detect";
 import { FloatingSpaceContext } from "../contexts/FloatingSpaceContext";
 
 import SvgImagemap from "./Imagemap";
+import Imagemap from "../img/imagemap.svg";
 
 const Headline = styled.h6`
   color: black;
