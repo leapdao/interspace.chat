@@ -1,0 +1,7 @@
+.click-zone {
+    
+}
+
+.click-zone:hover .purplebrush {
+    display: block;
+}

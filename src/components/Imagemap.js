@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { FloatingSpaceContext } from "../contexts/FloatingSpaceContext";
 
+import styles from "../styles/imagemap.css";
+
 function SvgImagemap(props) {
   const { addFloatingSpace } = useContext(FloatingSpaceContext);
   return (
@@ -11,11 +13,14 @@ function SvgImagemap(props) {
       fill="none"
       {...props}
     >
+      <filter id="blurMe">
+        <feGaussianBlur stdDeviation="5" />
+      </filter>
       <g clipPath="url(#imagemap_svg__clip0)" id="imagemap_svg__Imagemap">
         <g
           id="imagemap_svg__center-logo"
           className="click-zone"
-          onClick={() => addFloatingSpace("calendar")}
+          onClick={() => addFloatingSpace("livepeer")}
         >
           <path
             id="imagemap_svg__Background"
@@ -950,7 +955,7 @@ function SvgImagemap(props) {
             />
           </g>
         </g>
-        <g id="imagemap_svg__purple-brush">
+        <g id="imagemap_svg__purple-brush" class="purplebrush">
           <g id="imagemap_svg__Group_72">
             <g
               id="imagemap_svg__Group_73"

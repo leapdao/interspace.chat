@@ -13,6 +13,7 @@ import RoomInstance from "./integrations/RoomInstance";
 import LivestreamLinkInstance from "./integrations/LivestreamLinksInstance";
 
 import AboutInstance from "./external-sites/AboutInstance";
+import LivepeerInstance from "./external-sites/LivepeerInstance";
 import DonateInstance from "./external-sites/DonateInstance";
 import RaffleInstance from "./external-sites/RaffleInstance";
 import HelpInstance from "./external-sites/HelpInstance";
@@ -99,6 +100,8 @@ function getFloatingRoomWindow(windowKey) {
     return <HubInstance />;
   } else if (windowKey === "about") {
     return <AboutInstance />;
+  } else if (windowKey === "livepeer") {
+    return <LivepeerInstance />;
   } else if (windowKey === "raffle") {
     return <RaffleInstance />;
   } else if (windowKey === "donate") {

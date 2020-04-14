@@ -43,6 +43,7 @@ function App() {
               transition: 0.01s cubic-bezier(0.2, 0.8, 0.2, 1);
               & :hover {
                 text-shadow: 10px 10px 10px black;
+                filter: grayscale(50%);
                 cursor: pointer;
               }
             }

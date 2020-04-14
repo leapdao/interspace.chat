@@ -10,7 +10,7 @@ const SvgImagemap = (props) => {
         <g
           id="imagemap_svg__green-left-amoeba"
           className="click-zone"
-          onClick={() => addFloatingSpace("calendar")}
+          onClick={() => addFloatingSpace("livepeer")}
         >
           <path
             id="imagemap_svg__Vector"
