@@ -1,16 +1,15 @@
-import React from "react";
+import React from "react"
 
 function CalendarInstance() {
-  return (
-    <iframe
-      src="https://calendar.google.com/calendar/b/1/embed?height=400&wkst=2&bgcolor=%23ffffff&ctz=Europe%2FVienna&src=N3RtbnFxamZtdnB2dGIyNTdycDNlNDkxbmtAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=aWo1cmVzcGM2bHFpN2Y5ZWVkYmcxZWlkbnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=NDgzY3RzbjZkZzIydWp0NW9uczlvOHBmcHNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&src=bDRxbGtzZDgyZDJhZzFia2ljOHB1NDRxbGdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&color=%23000000&color=%234285F4&color=%238E24AA&color=%23F4511E&mode=AGENDA"
-      width="100%"
-      height="100%"
-      frameBorder="0"
-      scrolling="no"
-      title="calendar"
-    ></iframe>
-  );
+	return (
+		<iframe
+			src="https://calendar.google.com/calendar/b/1/embed?height=600&amp;wkst=2&amp;bgcolor=%23ffffff&amp;ctz=Europe%2FVienna&amp;src=bDRxbGtzZDgyZDJhZzFia2ljOHB1NDRxbGdAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=aWo1cmVzcGM2bHFpN2Y5ZWVkYmcxZWlkbnNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;src=NDgzY3RzbjZkZzIydWp0NW9uczlvOHBmcHNAZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%23F4511E&amp;color=%234285F4&amp;color=%238E24AA&amp;mode=AGENDA&amp;showNav=0&amp;showDate=0&amp;showPrint=0&amp;showTz=1&amp;title=NonCon2020%20Edited%20Talks%20Release%20Schedule"
+			width="100%"
+			height="100%"
+			frameBorder="0"
+			scrolling="no"
+			title="calendar"></iframe>
+	)
 }
 
-export default CalendarInstance;
+export default CalendarInstance
