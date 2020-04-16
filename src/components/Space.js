@@ -4,6 +4,7 @@ import { BrowserView, MobileView } from "react-device-detect";
 
 import { FloatingSpaceContext } from "../contexts/FloatingSpaceContext";
 
+import Ethturin from "./Ethturin";
 import SvgImagemap from "./Imagemap";
 import Imagemap from "../img/imagemap.svg";
 
@@ -155,7 +156,7 @@ const Space = () => {
           </SpaceInfo>
         </span>
         <MapContainer>
-          <SvgImagemap />
+          <Ethturin />
         </MapContainer>
         {/** 
 				<div>
