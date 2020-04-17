@@ -27,32 +27,34 @@ const LinkStyled = styled.a`
 }`;
 
 function LivestreamLinksInstance() {
-	return (
-		<Container>
-			<p>Direct links to the youtube streams of our conference tracks:</p>
-			<ParagraphStyled>
-				<LinkStyled
-					href="https://youtu.be/ddYimGGyxA0"
-					target="_blank"
-					rel="noopener noreferrer">
-					parallel-society
-				</LinkStyled>
-				<LinkStyled
-					href="https://youtu.be/wppHTKiFR_Q"
-					target="_blank"
-					rel="noopener noreferrer">
-					metatrack
-				</LinkStyled>
-				<LinkStyled
-					href="https://youtu.be/GpwK_lHYv3Q"
-					target="_blank"
-					rel="noopener noreferrer">
-					cryptoeconomics-lab (not live on Sunday, link is pointing to recorded
-					stream)
-				</LinkStyled>
-			</ParagraphStyled>
-		</Container>
-	)
+  return (
+    <Container>
+      <p>Direct links to the youtube streams of our conference tracks:</p>
+      <ParagraphStyled>
+        <LinkStyled
+          href="https://youtu.be/ddYimGGyxA0"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          stop-covid-19
+        </LinkStyled>
+        <LinkStyled
+          href="https://youtu.be/wppHTKiFR_Q"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          mentor-ring
+        </LinkStyled>
+        <LinkStyled
+          href="https://youtu.be/GpwK_lHYv3Q"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          sdg-workshop (not live on Sunday, link is pointing to recorded stream)
+        </LinkStyled>
+      </ParagraphStyled>
+    </Container>
+  );
 }
 
 export default LivestreamLinksInstance;

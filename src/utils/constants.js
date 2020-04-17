@@ -1,51 +1,47 @@
 const domain = "portal.interspace.chat";
 
-export const JitsiInstances = [
-  "parallel-society",
-  "cryptoeconomics-lab",
-  "metatrack"
-];
+export const JitsiInstances = ["stop-covid-19", "sdg-workshop", "mentor-ring"];
 
 export const RoomURLs = {
-  "parallel-society": {
+  "stop-covid-19": {
     jitsi: {
       domain,
-      roomName: "parallel-society"
+      roomName: "stop-covid-19",
     },
     mozillaHub: {
-      externalUrl: "https://hubs.mozilla.com/nKCuNrg/house-of-defiance"
+      externalUrl: "https://hubs.mozilla.com/nKCuNrg/house-of-defiance",
     },
     youtube: {
       videoId: "pLq2xC_wGMg",
-      externalUrl: "https://youtu.be/X5k8Cbr0d44"
-    }
+      externalUrl: "https://youtu.be/X5k8Cbr0d44",
+    },
   },
-  "cryptoeconomics-lab": {
+  "sdg-workshop": {
     jitsi: {
       domain,
-      roomName: "cryptoeconomics-lab"
+      roomName: "sdg-workshop",
     },
     mozillaHub: {
-      externalUrl: "https://hubs.mozilla.com/nKCuNrg/house-of-defiance"
+      externalUrl: "https://hubs.mozilla.com/nKCuNrg/house-of-defiance",
     },
     youtube: {
       videoId: "X5k8Cbr0d44",
-      externalUrl: "https://youtu.be/X5k8Cbr0d44"
-    }
+      externalUrl: "https://youtu.be/X5k8Cbr0d44",
+    },
   },
-  metatrack: {
+  "mentor-ring": {
     jitsi: {
       domain,
-      roomName: "metatrack"
+      roomName: "mentor-ring",
     },
     mozillaHub: {
-      externalUrl: "https://hubs.mozilla.com/nKCuNrg/house-of-defiance"
+      externalUrl: "https://hubs.mozilla.com/nKCuNrg/house-of-defiance",
     },
     youtube: {
       videoId: "X5k8Cbr0d44",
-      externalUrl: "https://youtu.be/X5k8Cbr0d44"
-    }
-  }
+      externalUrl: "https://youtu.be/X5k8Cbr0d44",
+    },
+  },
 };
 
 export const RoomNames = Object.keys(RoomURLs);
