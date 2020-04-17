@@ -17,6 +17,8 @@ import LivepeerInstance from "./external-sites/LivepeerInstance";
 import DonateInstance from "./external-sites/DonateInstance";
 import RaffleInstance from "./external-sites/RaffleInstance";
 import HelpInstance from "./external-sites/HelpInstance";
+import VHackathonInstance from "./external-sites/VHackathonInstance";
+import GitcoinInstance from "./external-sites/GitcoinInstance";
 
 import { RoomNames } from "../utils/constants";
 import LaunchNewRoom from "./LaunchNewRoom";
@@ -86,6 +88,10 @@ function getFloatingRoomWindow(windowKey) {
     return <LoftRadioInstance />;
   } else if (RoomNames.indexOf(windowKey) > -1) {
     return <RoomInstance space={windowKey} />;
+  } else if (windowKey === "VHackathon ETH Turin") {
+    return <VHackathonInstance />;
+  } else if (windowKey === "Gitcoin") {
+    return <GitcoinInstance />;
   } else if (windowKey === "discord chat") {
     return <ChatInstance />;
   } else if (windowKey === "new room") {
@@ -200,38 +206,32 @@ function FloatingRoomWindow() {
   const setFloatingwindowColor = (windowKey) => {
     let bgColor = "#000000dd";
 
-    if (windowKey === "parallel-society") {
+    if (windowKey === "stop-covid-19") {
       bgColor = "#EEA800dd";
-    } else if (windowKey === "metatrack") {
+    } else if (windowKey === "mentor-ring") {
       bgColor = "#8e24aadd";
-    } else if (windowKey === "cryptoeconomics-lab") {
+    } else if (windowKey === "sdg-workshop") {
       bgColor = "#4285f4dd";
     } else if (
       windowKey === "discord chat" &&
-      space.indexOf("parallel-society") > -1
+      space.indexOf("stop-covid-19") > -1
     ) {
       bgColor = "#EEA800dd";
     } else if (
       windowKey === "discord chat" &&
-      space.indexOf("cryptoeconomics-lab") > -1
+      space.indexOf("sdg-workshop") > -1
     ) {
       bgColor = "#4285f4dd";
     } else if (
       windowKey === "discord chat" &&
-      space.indexOf("metatrack") > -1
+      space.indexOf("mentor-ring") > -1
     ) {
       bgColor = "#8e24aadd";
-    } else if (
-      windowKey === "youtube" &&
-      space.indexOf("parallel-society") > -1
-    ) {
+    } else if (windowKey === "youtube" && space.indexOf("stop-covid-19") > -1) {
       bgColor = "#EEA800dd";
-    } else if (
-      windowKey === "youtube" &&
-      space.indexOf("cryptoeconomics-lab") > -1
-    ) {
+    } else if (windowKey === "youtube" && space.indexOf("sdg-workshop") > -1) {
       bgColor = "#4285f4dd";
-    } else if (windowKey === "youtube" && space.indexOf("metatrack") > -1) {
+    } else if (windowKey === "youtube" && space.indexOf("mentor-ring") > -1) {
       bgColor = "#8e24aadd";
     } else if (windowKey === "donate") {
       bgColor = "#107a00dd";

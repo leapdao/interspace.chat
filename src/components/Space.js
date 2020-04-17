@@ -231,7 +231,7 @@ const Space = () => {
 						<div
 							id="c1"
 							className="circle row-2 c-right click-zone"
-							onClick={() => addFloatingSpace("metatrack")}></div>
+							onClick={() => addFloatingSpace("mentor-ring")}></div>
 						<div
 							id="c2"
 							className="circle row-6 c-right click-zone"
@@ -255,7 +255,7 @@ const Space = () => {
             <div
               id="c6"
               className="circle row-2 c-center click-zone"
-              onClick={() => addFloatingSpace("parallel-society")}
+              onClick={() => addFloatingSpace("stop-covid-19")}
             ></div>
 
             <div

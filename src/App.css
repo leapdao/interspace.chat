@@ -164,11 +164,11 @@ body {
 }
 
 #c1 {
-  background-image: url(./img/noncon-portals/metatrack.png);
+  background-image: url(./img/noncon-portals/mentor-ring.png);
   background-size: contain;
 }
 
-#c1:hover {  background-image: url(./img/noncon-portals/metatrack-hover.png);
+#c1:hover {  background-image: url(./img/noncon-portals/mentor-ring-hover.png);
   background-size: contain;
 }
 
