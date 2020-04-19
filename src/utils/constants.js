@@ -1,4 +1,4 @@
-const domain = "breakout.interspace.chat";
+const domain = "space.leapdao.org";
 
 export const JitsiInstances = ["capsule1", "capsule2"];
 

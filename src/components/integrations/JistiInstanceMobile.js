@@ -24,7 +24,7 @@ const JitsiInstanceMobile = () => {
   const height = 400;
 
   useEffect(() => {
-    const domain = "breakout.interspace.chat";
+    const domain = "space.leapdao.org";
     const options = {
       roomName: currentSpace,
       //     width: width,

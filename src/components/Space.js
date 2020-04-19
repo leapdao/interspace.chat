@@ -260,7 +260,7 @@ const Space = () => {
               className="circle row-4 c-center click-zone"
               onClick={() => addFloatingSpace("calendar")}
             >
-              <span className="roomName">Event calendar</span>
+              <span className="roomName">Team calendar</span>
             </div>
           </div>
           {/*
@@ -286,7 +286,7 @@ const Space = () => {
           <Descripton>
             <p> Click below to enter the videochat</p>
 
-            <a href="https://breakout.interspace.chat">or open a new room</a>
+            <a href="https://space.leapdao.org">or open a new room</a>
           </Descripton>
           <MobileSelectorContainer>
             <Room roomName="capsule1" />
